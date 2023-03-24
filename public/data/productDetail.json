@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "title": "테라모 4인 쇼파 브라운",
+    "price": "40000",
+    "discount": "10",
+    "discountPrice": "36000",
+    "stock": 5
+  }
+]

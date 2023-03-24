@@ -16,8 +16,7 @@ ${reset}
   body{
     font-family: EF_jejudoldam;
   }
-
-
+  
   `;
 
 export default GlobalStyle;
