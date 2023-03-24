@@ -3,12 +3,7 @@ import styled from 'styled-components';
 import theme from '../../styles/theme';
 
 const Main = () => {
-  const { Width, TextColor } = theme;
-  return (
-    <Width>
-      <p>main</p>
-    </Width>
-  );
+  return <>Main</>;
 };
 
 export default Main;
