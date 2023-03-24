@@ -7,6 +7,10 @@ const Width = styled.div`
   font-size: 16px;
 `;
 
-const theme = { Width };
+const TextColor = styled.span`
+  color: ${Props => (Props.color ? '#afd485' : 'black')};
+`;
+
+const theme = { Width, TextColor };
 
 export default theme;
