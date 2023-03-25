@@ -13,7 +13,6 @@ ${reset}
     font-family: "EF_jejudoldam";
     src: url(${EF_jejudoldam})
   }
-  
   body{
     font-family: EF_jejudoldam;
   }
