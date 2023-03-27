@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 const theme = {
   maxWidth: '1256px',
   margin: '110px auto 0px',
