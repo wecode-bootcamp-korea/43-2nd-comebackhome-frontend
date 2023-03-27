@@ -3,7 +3,7 @@ const theme = {
   margin: '110px auto 0px',
   padding: '0 60px',
   white: '#FFFFFF',
-  hoverGreen: '#afd485',
+  Green: '#AFD485',
 };
 
 export default theme;
