@@ -7,7 +7,6 @@ import Signin from './pages/SignIn/Signin';
 import Cart from './pages/Cart/Cart';
 import Order from './pages/Order/Order';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
-import SignIn from './pages/SignIn/Signin';
 
 const Router = () => {
   return (
@@ -19,7 +18,6 @@ const Router = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order />} />
         <Route path="/productdetail" element={<ProductDetail />} />
-        <Route path="/signin" element={<SignIn />} />
       </Routes>
       <Footer />
     </BrowserRouter>
