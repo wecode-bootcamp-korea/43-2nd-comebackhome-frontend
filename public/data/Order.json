@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "nickname": "신정호",
+    "email": "hole546@naver.com",
+    "totalPrice": "100000000",
+    "point": "500000",
+    "cartlist": [
+      {
+        "id": 1,
+        "thumbnail": "/images/shoppingItem/item1.jpg",
+        "productName": "트롬 워시 타워 세탁 15kg",
+        "delivery": "무료배송",
+        "color": "White",
+        "price": "1,000,000",
+        "count": "2"
+      },
+      {
+        "id": 2,
+        "thumbnail": "/images/shoppingItem/item1.jpg",
+        "productName": "트롬 워시 타워 세탁 15kg",
+        "delivery": "무료배송",
+        "color": "White",
+        "price": "1,000,000",
+        "count": "1"
+      }
+    ]
+  }
+]
