@@ -33,15 +33,13 @@ export const P = styled.p`
   font-size: 20px;
   font-weight: 700;
 
-  &:hover{  
-     color: #568a35;
-     transition: 0.3s;
-     cursor: pointer;
-      font-weight: 900;
-
+  &:hover {
+    color: #568a35;
+    transition: 0.3s;
+    cursor: pointer;
+    font-weight: 900;
   }
-  text-align: ${props => (props.right ? 'right' : 'left')}
-}
+  text-align: ${props => (props.right ? 'right' : 'left')};
 `;
 
 export const SliderSlide = styled(Slider)`
