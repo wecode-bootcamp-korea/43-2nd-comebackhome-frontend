@@ -8,6 +8,7 @@ import Cart from './pages/Cart/Cart';
 import Order from './pages/Order/Order';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ShoppingList from './pages/ShoppingList/ShoppingList';
+import HomepartyList from './pages/HomepartyList/HomepartyList';
 
 const Router = () => {
   return (
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/shoppinglist" element={<ShoppingList />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
+        <Route path="/homepartylist" element={<HomepartyList />} />
       </Routes>
       <Footer />
     </BrowserRouter>
