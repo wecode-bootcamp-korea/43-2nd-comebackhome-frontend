@@ -30,8 +30,8 @@ const Redirect = () => {
           .then(res => res.json())
           .then(data => {
             if (data) {
-              localStorage.setItem('token', data.access_token);
-              navigate('/');
+              localStorage.setItem('token', data.accessToken);
+              navigate(-3);
             }
           });
       });

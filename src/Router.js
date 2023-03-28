@@ -22,7 +22,7 @@ const Router = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order />} />
-        <Route path="/productdetail/:id" element={<ProductDetail />} />
+        <Route path="/productdetail" element={<ProductDetail />} />
         <Route path="/homepartylist" element={<HomepartyList />} />
         <Route path="/productlist" element={<ProductList />} />
         <Route path="auth/kakao/callback" element={<Redirect />} />

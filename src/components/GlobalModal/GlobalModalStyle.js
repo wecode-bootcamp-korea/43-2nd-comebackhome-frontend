@@ -6,7 +6,7 @@ export const ButtonWrap = styled.div`
   margin: 20px 0px 15px 0px;
 `;
 
-export const customStyles = {
+export const CustomStyles = {
   content: {
     display: 'flex',
     flexDirection: 'column',
@@ -32,4 +32,8 @@ export const Button = styled.button`
     background-color: #568a35;
     color: white;
   }
+`;
+
+export const Text = styled.div`
+  margin: 10px 0;
 `;

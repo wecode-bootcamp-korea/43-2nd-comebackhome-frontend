@@ -9,7 +9,7 @@ const OrderProduct = ({ list }) => {
       </S.CartHeader>
       <S.OrderProductWrap padding>
         <S.ProductImgWrap>
-          <S.ProductImg src={list.thumbnail} alt="로고사진" />
+          <S.ProductImg src={list.productImage} alt="로고사진" />
         </S.ProductImgWrap>
         <S.ProductDetail>
           <S.DetailMargin>{list.productName}</S.DetailMargin>
@@ -19,7 +19,7 @@ const OrderProduct = ({ list }) => {
             color="rgb(130, 140, 148)"
             marginBottom="9px"
           >
-            Color: {list.color}
+            Color: {list.productColor}
           </S.DetailElement>
           <S.OrderProductWrap align>
             <S.DetailElement
@@ -27,10 +27,10 @@ const OrderProduct = ({ list }) => {
               color="rgb(47, 52, 56)"
               fontWeight="600"
             >
-              {list.price}
+              {Number(list.productPrice).toLocaleString()}원
             </S.DetailElement>
             <S.Line />
-            <S.ProductContent>{list.count}개</S.ProductContent>
+            <S.ProductContent>{list.quantity}개</S.ProductContent>
           </S.OrderProductWrap>
         </S.ProductDetail>
       </S.OrderProductWrap>

@@ -1,17 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { useNavigate } from 'react-router-dom';
-import { ButtonWrap, Button, customStyles } from './GlobalModalStyle';
+import { ButtonWrap, Button, CustomStyles } from './GlobalModalStyle';
 
-const GlobalModal = ({ text, isOpen, setIsOpen }) => {
+const GlobalModal = ({ text, isOpen, setIsOpen, count, id }) => {
   const navigate = useNavigate();
+
+  const token = localStorage.getItem('token');
+
   const modalSwitch = e => {
     const { value } = e.target;
     if (value === 'NO') {
       setIsOpen(isOpen => !isOpen);
-    } else {
+    } else if (!token) {
+      navigate(`/signin`);
+    } else if (token && value === 'YES') {
       setIsOpen(isOpen => !isOpen);
-      navigate(`${text}`);
+      navigate(`/${text}`);
     }
   };
 
@@ -19,9 +24,9 @@ const GlobalModal = ({ text, isOpen, setIsOpen }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={() => setIsOpen(isOpen => !isOpen)}
-      style={customStyles}
+      style={CustomStyles}
     >
-      {text} Page로 이동하시겠습니까?
+      {text}Page로 이동하시겠습니까?
       <ButtonWrap>
         <Button onClick={modalSwitch} value="NO">
           아니요

@@ -1,29 +1,31 @@
-[
-  {
-    "id": 1,
-    "nickname": "신정호",
-    "email": "hole546@naver.com",
-    "totalPrice": "100000000",
-    "point": "500000",
-    "cartlist": [
-      {
-        "id": 1,
-        "thumbnail": "/images/shoppingItem/item1.jpg",
-        "productName": "트롬 워시 타워 세탁 15kg",
-        "delivery": "무료배송",
-        "color": "White",
-        "price": "1,000,000",
-        "count": "2"
-      },
-      {
-        "id": 2,
-        "thumbnail": "/images/shoppingItem/item1.jpg",
-        "productName": "트롬 워시 타워 세탁 15kg",
-        "delivery": "무료배송",
-        "color": "White",
-        "price": "1,000,000",
-        "count": "1"
-      }
-    ]
-  }
-]
+{
+  "message": "포인트가 지급되었습니다.",
+  "orderList": [
+    {
+      "cartId": 1,
+      "productId": 10,
+      "productName": "동시입력이 가능한 무선키보드",
+      "productImage": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80",
+      "productColor": "블랙",
+      "productPrice": "754290",
+      "quantity": 3,
+      "nickame": "we.code",
+      "email": "wecode@gmail.com",
+      "totalPrice": "792090",
+      "point": "792090"
+    },
+    {
+      "cartId": 2,
+      "productId": 13,
+      "productName": "무소음 변기시트, 변기커버",
+      "productImage": "https://as1.ftcdn.net/v2/jpg/01/22/59/70/1000_F_122597055_iMDbbLVMuMjJzwC6VQXJWrMIL1f2XxN5.jpg",
+      "productColor": "화이트",
+      "productPrice": "37800",
+      "quantity": 2,
+      "nickame": "we.code",
+      "email": "wecode@gmail.com",
+      "totalPrice": "792090",
+      "point": "792090"
+    }
+  ]
+}
