@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const FooterMain = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   margin-top: 80px;
   padding: 40px 0px;
   background-color: rgb(247, 249, 250);
