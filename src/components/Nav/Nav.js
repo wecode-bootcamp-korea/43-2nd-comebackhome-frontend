@@ -39,7 +39,7 @@ const Nav = () => {
           </S.Li>
         </S.NavMenu>
         <S.Navcontents>
-          {true ? (
+          {false ? (
             <S.Li>
               <S.Astyled>
                 <S.ProfileImg>

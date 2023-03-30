@@ -54,5 +54,33 @@
     "productName": "무볼트 드레스룸 조립식 멀티행거",
     "price": "1000000",
     "discount": "30%"
+  },
+  {
+    "id": 9,
+    "thumbnail": "/images/shoppingItem/item1.jpg",
+    "productName": "카페 방수패브릭 접이식 소파베드 4colors",
+    "price": "159000",
+    "discount": "31%"
+  },
+  {
+    "id": 10,
+    "thumbnail": "/images/shoppingItem/item1.jpg",
+    "productName": "무볼트 드레스룸 조립식 멀티행거",
+    "price": "1000000",
+    "discount": "30%"
+  },
+  {
+    "id": 11,
+    "thumbnail": "/images/shoppingItem/item1.jpg",
+    "productName": "카페 방수패브릭 접이식 소파베드 4colors",
+    "price": "159000",
+    "discount": "31%"
+  },
+  {
+    "id": 12,
+    "thumbnail": "/images/shoppingItem/item1.jpg",
+    "productName": "무볼트 드레스룸 조립식 멀티행거",
+    "price": "1000000",
+    "discount": "30%"
   }
 ]

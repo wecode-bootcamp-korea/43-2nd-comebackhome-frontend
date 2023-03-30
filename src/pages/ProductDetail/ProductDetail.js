@@ -60,8 +60,8 @@ const ProductDetail = () => {
   }, []);
 
   return (
-    <Width font="AnsungtangmyunBold">
-      <S.ProductWrap>
+    <Width>
+      <S.ProductWrap weight="700">
         <S.Imgs src="/images/comebackhome.png" />
         {product.map(({ id, title, price, discount, discountPrice, stock }) => (
           <S.ProductInfo key={id}>
@@ -73,7 +73,7 @@ const ProductDetail = () => {
                 color="#787878"
                 marginBottom="10px"
               >
-                {Number(price).toLocaleString()}
+                {Number(price).toLocaleString()}원
               </S.Text>
               <S.Text marginBottom="60px" size="32px">
                 <S.Span color="red" marginRight="10px">
@@ -90,7 +90,7 @@ const ProductDetail = () => {
                 </S.Span>
               </S.Text>
               <S.Text marginBottom="15px" size="20px">
-                배송정보
+                배송비
                 <S.Span marginLeft="25px" color="#787878">
                   무료
                 </S.Span>

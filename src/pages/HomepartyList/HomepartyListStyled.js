@@ -47,8 +47,6 @@ export const HomepartyBox = styled.div`
   max-width: 380px;
   height: 440px;
   &:hover {
-    transform: scale(1.02);
-    transition: all 0.3s ease-out;
     cursor: pointer;
   }
 `;
@@ -56,6 +54,10 @@ export const HomepartyBoxImg = styled.img`
   width: 380px;
   height: 330px;
   border-radius: 15px;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-out;
+  }
 `;
 
 export const HomepartyBoxP = styled.p`

@@ -7,12 +7,12 @@ import Signin from './pages/SignIn/Signin';
 import Cart from './pages/Cart/Cart';
 import Order from './pages/Order/Order';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
-import ShoppingList from './pages/ShoppingList/ShoppingList';
 import HomepartyList from './pages/HomepartyList/HomepartyList';
 import Redirect from './pages/SignIn/Redirect';
 import HomepartyDetail from './pages/HomepartyDetail/HomepartyDetail';
 
 import ProductList from './pages/ProductList/ProductList';
+
 const Router = () => {
   return (
     <BrowserRouter>
@@ -24,7 +24,6 @@ const Router = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
         <Route path="/homepartylist" element={<HomepartyList />} />
-        <Route path="/shoppinglist" element={<ShoppingList />} />
         <Route path="/productlist" element={<ProductList />} />
         <Route path="auth/kakao/callback" element={<Redirect />} />
         <Route path="/homepartydetail" element={<HomepartyDetail />} />

@@ -21,7 +21,7 @@ ${reset}
     font-style: normal;
   }  
   body{
-    font-family: EF_jejudoldam;
+    font-family: IBMPlexSansKR-Regular;
   }
   `;
 

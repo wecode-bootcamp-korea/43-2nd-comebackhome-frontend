@@ -16,7 +16,7 @@ const Product = ({ id, thumbnail, productName, price, discount }) => {
       <S.ShopingItemP>{productName}</S.ShopingItemP>
       <span />
       <S.ShopingItemSpan strong>{discount}</S.ShopingItemSpan>
-      <S.ShopingItemSpan>{Number(price)}</S.ShopingItemSpan>
+      <S.ShopingItemSpan>{Number(price).toLocaleString()}원</S.ShopingItemSpan>
     </S.ShoppingMap>
   );
 };

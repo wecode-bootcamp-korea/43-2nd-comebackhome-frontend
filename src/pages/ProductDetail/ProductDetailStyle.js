@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ProductWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  font-weight: ${({ weight }) => weight};
 `;
 
 export const Imgs = styled.img`
@@ -18,7 +19,7 @@ export const ProductInfo = styled.div`
 `;
 
 export const Title = styled.div`
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid lightgrey;
   font-size: 25px;
 `;
 
