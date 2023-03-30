@@ -11,4 +11,5 @@ export const API = {
   comment: `${BASE_URL}/comments/post`,
   reply: `${BASE_URL}/comments/reply`,
   productlist: `${BASE_URL}/products`,
+  carts: `${BASE_URL}/carts`,
 };

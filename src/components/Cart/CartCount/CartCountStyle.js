@@ -1,16 +1,27 @@
 import styled from 'styled-components';
 
 export const CartCountInput = styled.div`
-  width: 70px;
+  box-sizing: border-box;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  margin: 0 0 12px 0;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: #f7f9fa;
+  width: 100%;
+  align-items: center;
+  color: #2f3438;
+  /* margin-top: 0; */
+`;
+
+export const CartCountInputWrap = styled.div`
+  display: flex;
   padding: 7px 6px;
   background: #ffffff;
-  color: #2f3438;
   border: 1px solid #dadde0;
-  border-radius: 4px;
-  margin-top: 0;
+
+  /* margin-right: 600px; */
+  /* padding: 0 6px; */
 `;
 
 export const CartCountMinus = styled.button`
@@ -21,7 +32,6 @@ export const CartCountMinus = styled.button`
   border: none;
   background-color: white;
   line-height: 1;
-  margin-left: 5px;
   cursor: pointer;
 `;
 
@@ -32,7 +42,8 @@ export const CartCountButton = styled.span`
   border: 0;
   background: none;
   color: #2f3438;
-  margin-right: 2px;
+  margin-right: 8px;
+  margin-left: 8px;
 `;
 
 export const CartCountPlus = styled.button`
@@ -44,4 +55,11 @@ export const CartCountPlus = styled.button`
   line-height: 1;
   margin-right: 5px;
   cursor: pointer;
+`;
+
+export const CartPrice = styled.div`
+  width: max-content;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
 `;
