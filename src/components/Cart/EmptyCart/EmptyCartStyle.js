@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const EmptyCart = styled.div`
-  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   max-width: 1256px;

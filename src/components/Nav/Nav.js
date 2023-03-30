@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
   const handleLogout = () => {
     localStorage.removeItem('token');
     alert('로그아웃 되었습니다.');
@@ -38,7 +39,7 @@ const Nav = () => {
           </S.Li>
         </S.NavMenu>
         <S.Navcontents>
-          {false ? (
+          {token ? (
             <S.Li>
               <S.Astyled>
                 <S.ProfileImg>

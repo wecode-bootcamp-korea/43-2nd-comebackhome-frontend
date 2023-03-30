@@ -3,64 +3,60 @@
     "id": 1,
     "thumbnail": "/images/shoppingItem/item1.jpg",
     "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
+    "stock": 3,
     "color": "Color : White",
-    "price": "1,000,000"
+    "price": 100000,
+    "discount": 100,
+    "count": 1
   },
   {
     "id": 2,
     "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
-    "color": "Color : White",
-    "price": "1,000,000"
+    "productName": "트롬 워시 타워 세탁 25kg",
+    "stock": 4,
+    "color": "Color : Green",
+    "price": 200000,
+    "discount": 200,
+    "count": 1
   },
   {
     "id": 3,
     "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
+    "productName": "트롬 워시 타워 세탁 35kg",
+    "stock": 5,
     "color": "Color : White",
-    "price": "1,000,000"
+    "price": 300000,
+    "discount": 300,
+    "count": 1
   },
   {
     "id": 4,
     "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
-    "color": "Color : White",
-    "price": "1,000,000"
+    "productName": "트롬 워시 타워 세탁 45kg",
+    "stock": 6,
+    "color": "Color : Yellow",
+    "price": 400000,
+    "discount": 400,
+    "count": 1
   },
   {
     "id": 5,
     "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
-    "color": "Color : White",
-    "price": "1,000,000"
+    "productName": "트롬 워시 타워 세탁 55kg",
+    "stock": 7,
+    "color": "Color : Blue",
+    "price": 500000,
+    "discount": 500,
+    "count": 1
   },
   {
     "id": 6,
     "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
-    "color": "Color : White",
-    "price": "1,000,000"
-  },
-  {
-    "id": 7,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
-    "color": "Color : White",
-    "price": "1,000,000"
-  },
-  {
-    "id": 8,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "delivery": "무료배송",
-    "color": "Color : White",
-    "price": "1,000,000"
+    "productName": "트롬 워시 타워 세탁 65kg",
+    "stock": 8,
+    "color": "Color : Red",
+    "price": 600000,
+    "discount": 600,
+    "count": 1
   }
 ]
