@@ -6,8 +6,6 @@ export const Cart = styled.div`
   max-width: 1256px;
   margin: 110px auto 0px;
   padding: 0 60px;
-  font-family: AnsungtangmyunBold;
-  background-color: #f5f5f5;
 `;
 
 export const CartContainer = styled.div`

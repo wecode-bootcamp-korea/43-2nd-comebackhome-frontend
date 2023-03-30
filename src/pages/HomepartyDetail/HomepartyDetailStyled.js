@@ -11,6 +11,8 @@ export const WidthMe = styled.div`
 export const SubTitle = styled.div`
   font-family: IBMPlexSansKR-Regular;
   font-size: 15px;
+
+  color: ${({ color }) => (color ? '#568a35' : 'black')};
   font-weight: ${({ bold }) => (bold ? '700' : '0')};
   margin-top: ${({ top }) => (top ? '10px' : '0')};
 `;
@@ -62,12 +64,14 @@ export const ImgIcon = styled.img`
   width: 40px;
   height: 40px;
   margin-right: 8px;
+  border-radius: 5px;
 `;
 export const BacgroundAptSize = styled.div`
   background-color: #f0f0f0;
   height: 70px;
   display: flex;
   margin-bottom: 15px;
+  border-radius: 5px;
 `;
 
 export const AptSize = styled.div`
@@ -118,8 +122,8 @@ export const ProductListing = styled.div`
 `;
 
 export const Written = styled.div`
-  border-top: 2px solid #ebebeb;
-  border-bottom: 2px solid #ebebeb;
+  border-top: 2px solid #afd485;
+  border-bottom: 2px solid #afd485;
   margin: 20px 0 40px 0;
   padding-top: 25px;
 `;

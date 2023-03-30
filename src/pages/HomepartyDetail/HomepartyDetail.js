@@ -16,12 +16,14 @@ const HomepartyDetail = () => {
   }, []);
   return (
     <S.WidthMe>
-      <S.SubTitle bold>온라인 집들이</S.SubTitle>
+      <S.SubTitle color bold>
+        온라인 집들이
+      </S.SubTitle>
       <S.Title>통창 너머 따뜻한 봄이 들어오는 신혼집 리모델링</S.Title>
       <S.UserDetail>
         <S.UserInfo>
           <S.UserImg src="/images/thumbnail.jpg" alt="사용자프로필사진" />
-          <S.SubTitle bold>무능빈씨</S.SubTitle>
+          <S.SubTitle bold>응비니씨</S.SubTitle>
         </S.UserInfo>
         <S.Button>+팔로우</S.Button>
       </S.UserDetail>
@@ -67,7 +69,7 @@ const HomepartyDetail = () => {
       <S.Written>
         <S.UserInfo>
           <S.UserImg src="/images/thumbnail.jpg" alt="사용자프로필사진" />
-          <S.SubTitle bold>무능빈씨</S.SubTitle>
+          <S.SubTitle bold>응비니씨</S.SubTitle>
         </S.UserInfo>
       </S.Written>
       <S.Comment>댓글&nbsp;</S.Comment>

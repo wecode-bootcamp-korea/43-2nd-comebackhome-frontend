@@ -11,7 +11,7 @@ export const Header = styled.header`
   background-color: #fff;
   overflow: hidden;
   z-index: 10;
-  border-bottom: solid 1px gray;
+  border-bottom: 3px solid #afd485;
   font-family: AnsungtangmyunBold;
   margin-bottom: 80px;
 `;
@@ -45,20 +45,20 @@ export const A = styled.a`
   text-decoration: none;
 
   &:hover {
-    cursor: pointer;
     color: #568a35;
+    cursor: pointer;
   }
 `;
 
 export const Astyled = styled(A)`
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 export const Logout = styled.div`
   display: flex;
   margin: auto 0px;
   margin-left: 18px;
-  font-size: 18px;
+  font-size: 20px;
 
   &:hover {
     cursor: pointer;

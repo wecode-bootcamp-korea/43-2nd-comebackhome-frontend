@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const Main = () => {
   const [productData, setProductData] = useState([]);
   const [homePartyData, setHomePartyData] = useState([]);
+
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -16,11 +17,12 @@ const Main = () => {
     speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
+
     arrow: true,
   };
 
   useEffect(() => {
-    fetch('./data/ItemData.json')
+    fetch('./data/productItem.json')
       .then(res => res.json())
       .then(data => {
         setProductData(data);
@@ -38,38 +40,61 @@ const Main = () => {
   return (
     <Width>
       <S.Carousel>
-        <S.SliderSlide {...settings}>
-          {homePartyData.map(({ id, img }) => {
-            return (
-              <div
-                to="signin"
-                key={id}
-                onClick={() => navigate(`homeparty/${id}`)}
-              >
-                <S.SlidePicture src={img} />
-              </div>
-            );
-          })}
-        </S.SliderSlide>
+        <S.Room>
+          <S.SliderSlide {...settings}>
+            {homePartyData.map(({ id, img }) => {
+              return (
+                <div
+                  to="signin"
+                  key={id}
+                  onClick={() => navigate(`homeparty/${id}`)}
+                >
+                  <S.SlidePicture src={img} />
+                </div>
+              );
+            })}
+          </S.SliderSlide>
+        </S.Room>
+        <S.Advertise>
+          <S.SliderSlide {...settings}>
+            {CAROUSEL_PICTURE_LIST.map(({ id, img }) => {
+              return (
+                <div key={id}>
+                  <S.SlidePicture src={img} />
+                </div>
+              );
+            })}
+          </S.SliderSlide>
+        </S.Advertise>
       </S.Carousel>
-      <S.Title>쇼핑리스트젷</S.Title>
+      <S.Title>쇼핑리스트젶</S.Title>
       <S.P right onClick={() => navigate('/productlist')}>
         더보기
       </S.P>
       <S.ItemFlex>
-        {productData.map(({ id, thumbnail, productName, price, discount }) => (
-          <Product
-            key={id}
-            id={id}
-            thumbnail={thumbnail}
-            name={productName}
-            price={price}
-            discount={discount}
-          />
-        ))}
+        {productData.map(
+          (item, index) =>
+            index >= 0 &&
+            index <= 7 && (
+              <Product
+                key={item.id}
+                id={item.id}
+                thumbnail={item.thumbnail}
+                productName={item.productName}
+                price={item.price}
+                discount={item.discount}
+              />
+            )
+        )}
       </S.ItemFlex>
     </Width>
   );
 };
 
 export default Main;
+
+const CAROUSEL_PICTURE_LIST = [
+  { id: 101, img: '/images/slide/pic/pic3.png' },
+  { id: 102, img: '/images/slide/pic/pic2.png' },
+  { id: 103, img: '/images/slide/pic/pic1.png' },
+];

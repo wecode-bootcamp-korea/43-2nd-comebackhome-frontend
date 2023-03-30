@@ -4,10 +4,8 @@ export const ShoppingMap = styled.div`
   margin-top: 20px;
   font-size: 15px;
   max-width: 268px;
-  height: 440px;
+  height: 420px;
   &:hover {
-    transform: scale(1.02);
-    transition: all 0.3s ease-out;
     cursor: pointer;
   }
 `;
@@ -17,6 +15,11 @@ export const ShoppingItem = styled.img`
   height: 268px;
   margin-bottom: 5px;
   border-radius: 15px;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease-out;
+  }
 `;
 
 export const ShopingItemP = styled.p`
@@ -32,6 +35,7 @@ export const ShopingItemSpan = styled.span`
   font-family: IBMPlexSansKR-Regular;
   font-size: 20px;
   font-weight: 700;
+  margin-right: 10px;
 
   color: ${({ strong }) => (strong ? 'red' : 'black')};
 `;

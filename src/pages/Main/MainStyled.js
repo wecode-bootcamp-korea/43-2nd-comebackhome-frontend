@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 
 export const SlidePicture = styled.img`
-  width: 1256px;
+  width: 100%;
   height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
 
   &:hover {
     cursor: pointer;
@@ -12,6 +14,21 @@ export const SlidePicture = styled.img`
 
 export const Carousel = styled.div`
   margin-bottom: 60px;
+  width: 100%;
+  margin: 0 auto;
+`;
+
+export const Room = styled.div`
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+  margin-right: 10px;
+`;
+
+export const Advertise = styled.div`
+  display: inline-block;
+  vertical-align: top;
+  width: 39%;
 `;
 
 export const ItemFlex = styled.div`
@@ -21,8 +38,9 @@ export const ItemFlex = styled.div`
 `;
 
 export const Title = styled.h2`
+  font-family: 'EF_jejudoldam';
   font-size: 40px;
-  margin-top: 20px;
+  margin: 30px 0 0 0;
   color: #568a35;
 `;
 
@@ -45,6 +63,9 @@ export const SliderSlide = styled(Slider)`
   .slick-prev {
     z-index: 1;
     left: 30px;
+  }
+  .slick-slider {
+    width: 100%;
   }
 
   .slick-next {

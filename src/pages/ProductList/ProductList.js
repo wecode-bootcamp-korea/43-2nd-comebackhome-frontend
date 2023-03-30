@@ -17,7 +17,7 @@ const ProductList = () => {
   return (
     <Width>
       <S.TitleBox>
-        <S.ShoppingCategory>일상을 바꾸는 물건들,</S.ShoppingCategory>
+        <S.ShoppingCategory>일상을 바꾸는 물건들</S.ShoppingCategory>
         <S.TitleLogo src="images/dinnertable2.png" alt="물건사진" />
       </S.TitleBox>
       <S.DisplayCenter>
