@@ -13,7 +13,7 @@ ${reset}
     font-family: "EF_jejudoldam";
     src: url(${EF_jejudoldam})
   }
-  @font-face {
+@font-face {
   font-family: "IBMPlexSansKR-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
     format("woff");

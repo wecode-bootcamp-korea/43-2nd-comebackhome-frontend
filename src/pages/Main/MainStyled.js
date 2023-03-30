@@ -12,7 +12,6 @@ export const SlidePicture = styled.img`
 
 export const Carousel = styled.div`
   margin-bottom: 60px;
-  back
 `;
 
 export const ItemFlex = styled.div`

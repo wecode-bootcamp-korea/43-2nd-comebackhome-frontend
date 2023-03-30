@@ -53,7 +53,7 @@ const Main = () => {
         </S.SliderSlide>
       </S.Carousel>
       <S.Title>쇼핑리스트젷</S.Title>
-      <S.P right onClick={() => navigate('/productdetail')}>
+      <S.P right onClick={() => navigate('/productlist')}>
         더보기
       </S.P>
       <S.ItemFlex>
