@@ -69,6 +69,8 @@ export const HomepartyBoxP = styled.p`
 
 export const HomepartyBoxUser = styled.img`
   width: 30px;
+  height: 30px;
+  object-fit: cover;
   border-radius: 50%;
 `;
 
