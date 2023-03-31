@@ -48,7 +48,7 @@ const Main = () => {
                 <div
                   to="signin"
                   key={id}
-                  onClick={() => navigate(`homeparty/${id}`)}
+                  onClick={() => navigate(`homepartydetail/${id}`)}
                 >
                   <S.SlidePicture src={imageUrl} />
                 </div>
@@ -69,7 +69,7 @@ const Main = () => {
         </S.Advertise>
       </S.Carousel>
       <S.Title>쇼핑리스트젶</S.Title>
-      <S.P right onClick={() => navigate('/productlist')}>
+      <S.P right onClick={() => navigate('/productlist?offset=0&limit=8')}>
         더보기
       </S.P>
       <S.ItemFlex>

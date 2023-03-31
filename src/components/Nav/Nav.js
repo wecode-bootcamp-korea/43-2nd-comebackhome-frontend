@@ -32,7 +32,7 @@ const Nav = () => {
           </S.Li>
           <S.Li
             onClick={() => {
-              navigate('/productlist');
+              navigate('/productlist?offset=0&limit=8');
             }}
           >
             <S.A>쇼핑</S.A>

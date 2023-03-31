@@ -26,3 +26,28 @@ export const TitleBox = styled.div`
   margin-top: 20px;
   margin-bottom: 45px;
 `;
+
+export const LinkNumber = styled.div`
+  font-family: 'IBMPlexSansKR-Regular';
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+`;
+
+export const LinkText = styled.div`
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 25px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  ${({ checkBtn }) =>
+    checkBtn &&
+    `
+    background-color: rgb(86, 138, 53); 
+    color: white;
+    `}
+`;

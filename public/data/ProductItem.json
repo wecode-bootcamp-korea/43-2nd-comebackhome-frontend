@@ -1,86 +1,58 @@
 [
   {
     "id": 1,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "price": "1000000",
-    "discount": "30%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   },
   {
     "id": 2,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "애슐리 원목 전신거울 3colors",
-    "price": "69900",
-    "discount": "51%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   },
   {
     "id": 3,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "카페 방수패브릭 접이식 소파베드 4colors",
-    "price": "159000",
-    "discount": "31%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   },
   {
     "id": 4,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "무볼트 드레스룸 조립식 멀티행거",
-    "price": "1000000",
-    "discount": "30%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   },
   {
     "id": 5,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "트롬 워시 타워 세탁 15kg",
-    "price": "1000000",
-    "discount": "30%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   },
   {
     "id": 6,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "애슐리 원목 전신거울 3colors",
-    "price": "69900",
-    "discount": "51%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   },
   {
     "id": 7,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "카페 방수패브릭 접이식 소파베드 4colors",
-    "price": "159000",
-    "discount": "31%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   },
   {
     "id": 8,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "무볼트 드레스룸 조립식 멀티행거",
-    "price": "1000000",
-    "discount": "30%"
-  },
-  {
-    "id": 9,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "카페 방수패브릭 접이식 소파베드 4colors",
-    "price": "159000",
-    "discount": "31%"
-  },
-  {
-    "id": 10,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "무볼트 드레스룸 조립식 멀티행거",
-    "price": "1000000",
-    "discount": "30%"
-  },
-  {
-    "id": 11,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "카페 방수패브릭 접이식 소파베드 4colors",
-    "price": "159000",
-    "discount": "31%"
-  },
-  {
-    "id": 12,
-    "thumbnail": "/images/shoppingItem/item1.jpg",
-    "productName": "무볼트 드레스룸 조립식 멀티행거",
-    "price": "1000000",
-    "discount": "30%"
+    "image_url": "/images/shoppingItem/item1.jpg",
+    "name": "트롬 워시 타워 세탁 15kg",
+    "discountPrice": "1000000",
+    "discount_rate": "30%"
   }
 ]
