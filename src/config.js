@@ -6,4 +6,5 @@ export const API = {
   auth: `${KAKAO_BASE_URL}/oauth/authorize?client_`,
   getToken: `${KAKAO_BASE_URL}/oauth/token?grant_type=authorization_code&client_`,
   redirect: `${BASE_URL}/users/kakao/login`,
+  homepartylist: `${BASE_URL}/posts`,
 };
