@@ -74,8 +74,13 @@ const HomepartyDetail = () => {
   };
   const todayDate = `${time.year}-${time.month}-${time.date}`;
 
+  const enterComment = e => {
+    if (e.keyCode === 13) {
+      sendComments();
+    }
+  };
+
   const sendComments = event => {
-    event.preventDefault();
     if (currentComment === '') {
       return;
     }
@@ -125,7 +130,7 @@ const HomepartyDetail = () => {
           setAddComment(0);
         }
       });
-  }, []);
+  }, [addComment]);
 
   if (loadging) return <S.WidthMe>loadging</S.WidthMe>;
 
@@ -205,15 +210,15 @@ const HomepartyDetail = () => {
       <S.Comment color>{addComment}</S.Comment>
       <S.CommentUserBox>
         <S.CommentUserPic src="/images/frog.png" alt="사용자" />
-
         <S.Input
           placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
           value={currentComment}
           onChange={e => {
             setcurrentComment(e.target.value);
           }}
+          onKeyUp={enterComment}
         />
-        <S.CommentBtn onClick={() => sendComments}>입력</S.CommentBtn>
+        <S.CommentBtn onClick={sendComments}>입력</S.CommentBtn>
       </S.CommentUserBox>
       <S.CommentZone>
         {commentList &&

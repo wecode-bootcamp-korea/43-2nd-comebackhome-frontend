@@ -25,11 +25,18 @@ export const Comment = ({
     date,
     reply_comments,
   } = item;
+
   const onReplyClick = () => {
     setshowReplyInput(!showReplyInput);
   };
+
+  const enterComment = e => {
+    if (e.keyCode === 13) {
+      sendComments();
+    }
+  };
+
   const sendComments = (event, id) => {
-    event.preventDefault();
     if (currentComment === '') {
       return;
     }
@@ -58,6 +65,7 @@ export const Comment = ({
 
     setCommentList(updateReply);
     setcurrentComment('');
+    setshowReplyInput(false);
     setAddComment(addComment => addComment + 1);
 
     fetch(`${API.reply}`, {
@@ -97,20 +105,17 @@ export const Comment = ({
       {showReplyInput && (
         <S.ReCommentUserBox>
           <S.CommentUserPic src="/images/frog.png" alt="사용자" />
-
           <S.Input
             placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
             value={currentComment}
             onChange={e => {
               setcurrentComment(e.target.value);
             }}
+            onKeyUp={enterComment}
           />
-          <S.CommentBtn onClick={e => sendComments(e, commentId)}>
-            입력
-          </S.CommentBtn>
+          <S.CommentBtn onClick={sendComments}>입력</S.CommentBtn>
         </S.ReCommentUserBox>
       )}
-
       <S.CommentZone>
         {reply_comments &&
           reply_comments.map((item, index) => {

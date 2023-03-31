@@ -38,8 +38,10 @@ export const UserInfo = styled.div`
 
 export const UserImg = styled.img`
   width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+  object-fit: cover;
 `;
 
 export const Button = styled.button`
