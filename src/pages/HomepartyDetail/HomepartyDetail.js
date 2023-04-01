@@ -1,29 +1,149 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Comment } from './Component/Comment.js';
 import * as S from './HomepartyDetailStyled.js';
+import ImageMarker from 'react-image-marker';
+import { API } from '../../config.js';
 
 const HomepartyDetail = () => {
   const [shoppingItem, setShoppingItem] = useState([]);
+  const [loadging, setLoading] = useState(true);
+  const [show, setShow] = useState(false);
+  const [getproductId, setgetproductId] = useState(0);
+  const [commentList, setCommentList] = useState([]);
+  const [currentComment, setcurrentComment] = useState('');
+  const [addComment, setAddComment] = useState(0);
   const navigate = useNavigate();
+  const params = useParams();
+  const myNickname = localStorage.getItem('nickname');
+  const myProfileImage = localStorage.getItem('profileImage');
+  const markers = shoppingItem.productInfo;
+  const token = localStorage.getItem('token');
+  const CustomMarker = markers => {
+    const { productsId, productUrl, productName, productPrice } = markers;
+
+    if (getproductId && show) {
+      return (
+        <>
+          {getproductId === productsId && <S.MarkerButton>+</S.MarkerButton>}
+          {getproductId === productsId && (
+            <S.ProductInfoWrap dispaly>
+              <S.ProductImg src={productUrl} alt="제품사진" />
+              <S.ProductWrap>
+                <S.Text>{productName}</S.Text>
+                <S.Text>{productPrice.toLocaleString()}원</S.Text>
+              </S.ProductWrap>
+            </S.ProductInfoWrap>
+          )}
+        </>
+      );
+    }
+
+    return (
+      <>
+        <S.MarkerButton
+          onMouseOver={() => {
+            setgetproductId(productsId);
+          }}
+          onMouseLeave={() => {
+            setgetproductId(0);
+          }}
+          onClick={() => navigate(`shoppingdetail/${productsId}`)}
+        >
+          +
+        </S.MarkerButton>
+
+        {getproductId === productsId && (
+          <S.ProductInfoWrap dispaly>
+            <S.ProductImg src={productUrl} alt="제품 사진" />
+            <S.ProductWrap>
+              <S.Text>{productName}</S.Text>
+              <S.Text>{productPrice.toLocaleString()}원</S.Text>
+            </S.ProductWrap>
+          </S.ProductInfoWrap>
+        )}
+      </>
+    );
+  };
+
+  let today = new Date();
+  let time = {
+    year: today.getFullYear(),
+    month: today.getMonth() + 1,
+    date: today.getDate(),
+  };
+  const todayDate = `${time.year}-${time.month}-${time.date}`;
+
+  const sendComments = event => {
+    event.preventDefault();
+    if (currentComment === '') {
+      return;
+    }
+    const newComment = {
+      postId: params.id,
+      nickname: myNickname,
+      profileImage: myProfileImage,
+      content: currentComment,
+      reply_comments: [],
+      date: todayDate,
+    };
+
+    setCommentList([newComment, ...commentList]);
+    setcurrentComment('');
+    setAddComment(addComment => addComment + 1);
+
+    fetch(`${API.comment}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: token,
+      },
+      body: JSON.stringify({
+        contents: currentComment,
+        postId: params.id,
+      }),
+    }).then(response => response.json());
+  };
 
   useEffect(() => {
-    fetch('./data/ItemData.json')
+    fetch(`${API.homepartylist}/${params.id}`)
       .then(res => res.json())
       .then(data => {
-        setShoppingItem(data);
+        setShoppingItem(data.data);
+        setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`${API.getComment}/${params.id}`)
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data.comments.reverse());
+        if (data.comments[0].postingCount) {
+          setAddComment(Number(data.comments[0].postingCount));
+        } else {
+          setAddComment(0);
+        }
+      });
+  }, []);
+
+  if (loadging) return <S.WidthMe>loadging</S.WidthMe>;
+
   return (
     <S.WidthMe>
-      <S.SubTitle color bold>
-        온라인 집들이
-      </S.SubTitle>
-      <S.Title>통창 너머 따뜻한 봄이 들어오는 신혼집 리모델링</S.Title>
+      <S.SubTitle bold>온라인 집들이</S.SubTitle>
+      <S.Title>{shoppingItem.title}</S.Title>
       <S.UserDetail>
         <S.UserInfo>
-          <S.UserImg src="/images/thumbnail.jpg" alt="사용자프로필사진" />
-          <S.SubTitle bold>응비니씨</S.SubTitle>
+          <S.UserImg
+            src={
+              shoppingItem.social_profile_image
+                ? shoppingItem.social_profile_image
+                : '/images/frog.png'
+            }
+            alt="사용자프로필사진"
+          />
+          <S.SubTitle bold>{shoppingItem.social_nickname}</S.SubTitle>
         </S.UserInfo>
         <S.Button>+팔로우</S.Button>
       </S.UserDetail>
@@ -35,52 +155,85 @@ const HomepartyDetail = () => {
           </S.IconFlex>
           <S.IconFlex>
             <S.ImgIcon src="/images/shoppingItem/blueprint.png" />
-            <S.SubTitle bold>32평</S.SubTitle>
+            <S.SubTitle bold>{shoppingItem.roomSize}</S.SubTitle>
           </S.IconFlex>
         </S.AptSize>
       </S.BacgroundAptSize>
-      <S.Img src="/images/pic.jpg" />
-      <S.Contents>
-        안녕하세요 :-) 작년에 결혼해서 결혼생활 4개월 차가 된 신혼부부입니다!{' '}
-        <br />
-        남편은 회사원 그리고 와이프인 저는 네이버 스토어 팜에서 의류를 소소하게
-        판매 중입니다. 결혼 준비 중에 좋은 기회가 생겨 너무 감사하게도 첫
-        보금자리를 가질 수 있게 되었습니다. <br /> <br />
-        많은 선택과 고민을 하고 완성된 저층이라 매력적인 집, 강변과 나무가
-        보이고 빛이 잘 드는 정남향의 저희 집을 소개해 드립니다 ♥ 아직 많이
-        부족하지만 조금이라도 도움되셨으면 하는 마음입니다! 예쁘게 많이
-        봐주세요. <br />
-        감사합니다 :-){' '}
-      </S.Contents>
+      <S.Img src={shoppingItem.images[1]} />
+      <S.Contents>{shoppingItem.description}</S.Contents>
       <S.ImgIcon src="/images/sale.png" />
       <S.ColorSpan>3초컷 집들이 미리보기</S.ColorSpan>
-
-      <S.Img src="/images/30평 거실.jpg" />
+      <S.ImageMarkerWrap show={show}>
+        <ImageMarker
+          src={shoppingItem.images[0]}
+          markers={markers}
+          markerComponent={CustomMarker}
+        />
+      </S.ImageMarkerWrap>
       <S.ProductListing>
-        {shoppingItem.map(({ id, thumbnail }) => (
+        {shoppingItem.productInfo.map(({ productsId, productUrl }) => (
           <S.ShoppingListMap
-            key={id}
-            id={id}
-            src={thumbnail}
-            onClick={() => navigate(`shoppingdetail/${id}`)}
+            key={productsId}
+            id={productsId}
+            src={productUrl}
+            onClick={() => navigate(`shoppingdetail/${productsId}`)}
+            onMouseMove={() => {
+              setShow(true);
+              setgetproductId(productsId);
+            }}
+            onMouseLeave={() => {
+              setShow(false);
+              setgetproductId(0);
+            }}
           />
         ))}
       </S.ProductListing>
       <S.Written>
         <S.UserInfo>
-          <S.UserImg src="/images/thumbnail.jpg" alt="사용자프로필사진" />
-          <S.SubTitle bold>응비니씨</S.SubTitle>
+          <S.UserImg
+            src={
+              shoppingItem.social_profile_image
+                ? shoppingItem.social_profile_image
+                : '/images/frog.png'
+            }
+            alt="사용자프로필사진"
+          />
+          <S.SubTitle bold>{shoppingItem.social_nickname}</S.SubTitle>
         </S.UserInfo>
       </S.Written>
       <S.Comment>댓글&nbsp;</S.Comment>
-      <S.Comment color>23</S.Comment>
+      <S.Comment color>{addComment}</S.Comment>
       <S.CommentUserBox>
         <S.CommentUserPic src="/images/frog.png" alt="사용자" />
 
-        <S.Input placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)" />
-        <S.CommentBtn>입력</S.CommentBtn>
+        <S.Input
+          placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
+          value={currentComment}
+          onChange={e => {
+            setcurrentComment(e.target.value);
+          }}
+        />
+        <S.CommentBtn onClick={() => sendComments}>입력</S.CommentBtn>
       </S.CommentUserBox>
-      <Comment />
+      <S.CommentZone>
+        {commentList &&
+          commentList.map((item, index) => {
+            return (
+              <Comment
+                key={index}
+                item={item}
+                todayDate={todayDate}
+                commentList={commentList}
+                setCommentList={setCommentList}
+                addComment={addComment}
+                setAddComment={setAddComment}
+                myNickname={myNickname}
+                myProfileImage={myProfileImage}
+                token={token}
+              />
+            );
+          })}
+      </S.CommentZone>
     </S.WidthMe>
   );
 };

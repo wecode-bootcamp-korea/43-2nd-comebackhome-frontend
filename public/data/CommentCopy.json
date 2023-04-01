@@ -1,0 +1,48 @@
+[
+  {
+    "commentId": 31,
+    "postId": 5,
+    "content": "인테리어 디자인이 너무 예쁩니다!",
+    "nickname": "위코드인테리어",
+    "profileImage": "https://pixabay.com/get/ga55980dc91961147c6b3ab2eff268fe02638287267ca4b8a5481f567ddf8aff4d0083d61b0550a408bc8a4021bd2e2d29a6b31f2269115cc3c17ff25ae52bfdd84fa8f68a586f1220cb1af2f11cc461f_640.jpg",
+    "reply_comments": [
+      {
+        "replyId": 31,
+        "replynickname": "코딩부부",
+        "replyCommentDate": "2023-04-01",
+        "replyprofileImage": "https://pixabay.com/get/g772768c41afb33f2a8958e1f620e70006dfbbed1c45663e05cc115d98[…]84d6c08e1f0a470ab86a8c9bdf349257ee56fb04ab3c309b8445fdf_640.jpg",
+        "replyCommentContent": "꾸미는데 힘들었어요.."
+      }
+    ],
+    "date": "2023-04-01",
+    "postingCount": "5"
+  },
+  {
+    "commentId": 32,
+    "postId": 5,
+    "content": "너무 멋진 인테리어입니다.",
+    "nickname": "위코드인테리어",
+    "profileImage": "https://pixabay.com/get/ga55980dc91961147c6b3ab2eff268fe02638287267ca4b8a5481f567ddf8aff4d0083d61b0550a408bc8a4021bd2e2d29a6b31f2269115cc3c17ff25ae52bfdd84fa8f68a586f1220cb1af2f11cc461f_640.jpg",
+    "reply_comments": [
+      {
+        "replyId": 32,
+        "replynickname": "코딩부부",
+        "replyCommentDate": "2023-04-01",
+        "replyprofileImage": "https://pixabay.com/get/g772768c41afb33f2a8958e1f620e70006dfbbed1c45663e05cc115d98[…]84d6c08e1f0a470ab86a8c9bdf349257ee56fb04ab3c309b8445fdf_640.jpg",
+        "replyCommentContent": "감사합니다!"
+      }
+    ],
+    "date": "2023-04-01",
+    "postingCount": "5"
+  },
+  {
+    "commentId": 36,
+    "postId": 5,
+    "content": "너무 멋진 인테리어입니다.",
+    "nickname": "위코드인테리어",
+    "profileImage": "https://pixabay.com/get/ga55980dc91961147c6b3ab2eff268fe02638287267ca4b8a5481f567ddf8aff4d0083d61b0550a408bc8a4021bd2e2d29a6b31f2269115cc3c17ff25ae52bfdd84fa8f68a586f1220cb1af2f11cc461f_640.jpg",
+    "reply_comments": null,
+    "date": "2023-04-02",
+    "postingCount": "5"
+  }
+]

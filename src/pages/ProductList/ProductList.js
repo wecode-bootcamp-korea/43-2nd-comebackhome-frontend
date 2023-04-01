@@ -7,7 +7,7 @@ const ProductList = () => {
   const [productItem, setProductItem] = useState([]);
 
   useEffect(() => {
-    fetch('/data/ProductItem.json')
+    fetch('./data/ProductItem.json')
       .then(res => res.json())
       .then(data => {
         setProductItem(data);
@@ -21,16 +21,19 @@ const ProductList = () => {
         <S.TitleLogo src="images/dinnertable2.png" alt="물건사진" />
       </S.TitleBox>
       <S.DisplayCenter>
-        {productItem.map(({ id, thumbnail, productName, price, discount }) => (
-          <Product
-            key={id}
-            id={id}
-            thumbnail={thumbnail}
-            productName={productName}
-            price={price}
-            discount={discount}
-          />
-        ))}
+        {productItem.map(
+          ({ id, thumbnail, productName, price, discount, postId }) => (
+            <Product
+              key={id}
+              id={id}
+              thumbnail={thumbnail}
+              productName={productName}
+              price={price}
+              discount={discount}
+              postId={postId}
+            />
+          )
+        )}
       </S.DisplayCenter>
     </Width>
   );

@@ -26,7 +26,7 @@ const Router = () => {
         <Route path="/homepartylist" element={<HomepartyList />} />
         <Route path="/productlist" element={<ProductList />} />
         <Route path="auth/kakao/callback" element={<Redirect />} />
-        <Route path="/homepartydetail" element={<HomepartyDetail />} />
+        <Route path="/homepartydetail/:id" element={<HomepartyDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,0 +1,45 @@
+{
+  "data": {
+    "id": 5,
+    "title": "채광이 좋은 탁 트인 20평대 거실",
+    "description": "우선 햇빛이 굉장히 잘드는것이 특징인 방입니다. 채광이 좋은 탁트인 거실을 조성하기 위해서는 많은 요소들이 필요한데 이 방은 이 조건들을 잘 충족하고 있습니다. 큰 창문과 자연광의 양을 조절할 수 있는 커튼이 있고 밝고 화사한 색상의 벽지와 가구를 선택하여 빛을 반사하고 분산시켜서 밝은 분위기를 연출했습니다. 흰색 벽과 균형잡힌 짜임새가 안정된 느낌과 디자인적 효과를 주는 헤링본 패턴을 거실 바닥에 적용하여 모던한 거실분위기를 완성시켰습니다. 그리고 거실장에는 식물들을 배치하여 자연 친화적인 인테리어를 하고 나머지 가구들을 배치하였습니다.",
+    "roomSize": "20-29평",
+    "social_nickname": "위코드인테리어",
+    "social_profile_image": "https://pixabay.com/get/ga55980dc91961147c6b3ab2eff268fe02638287267ca4b8a5481f567ddf8aff4d0083d61b0550a408bc8a4021bd2e2d29a6b31f2269115cc3c17ff25ae52bfdd84fa8f68a586f1220cb1af2f11cc461f_640.jpg",
+    "image_url": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "productInfo": [
+      {
+        "top": 59,
+        "left": 45,
+        "productUrl": "https://images.unsplash.com/photo-1505015981034-6c23000c260c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+        "productsId": 21,
+        "productName": "고급형 에펠 체어",
+        "productPrice": 19900
+      },
+      {
+        "top": 75,
+        "left": 6,
+        "productUrl": "https://images.unsplash.com/photo-1595446757331-795d866924a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "productsId": 22,
+        "productName": "북유럽풍 소파",
+        "productPrice": 409000
+      },
+      {
+        "top": 32,
+        "left": 48,
+        "productUrl": "https://images.unsplash.com/photo-1528822855841-e8bf3134cdc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        "productsId": 23,
+        "productName": "빛 차단 소프트 암막 커튼",
+        "productPrice": 32900
+      },
+      {
+        "top": 50,
+        "left": 71,
+        "productUrl": "https://images.unsplash.com/photo-1603905179139-db12ab535ca9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=737&q=80",
+        "productsId": 24,
+        "productName": "프리미엄 캔들 향초",
+        "productPrice": 4500
+      }
+    ]
+  }
+}

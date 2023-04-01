@@ -14,13 +14,17 @@ const Homepartylist = () => {
 
   const changeAdress = e => {
     const { value, name } = e.target;
-    setList({ ...list, [name]: value });
+    if (value === '정렬' || value === '평수') {
+      setList({ ...list, [name]: '' });
+    } else {
+      setList({ ...list, [name]: value });
+    }
   };
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${API.homepartylist}?sorting=${sort}&room_size_type=${average}`)
+    fetch(`${API.homepartylist}?sorting=${sort}&roomSizeType=${average}`)
       .then(res => res.json())
       .then(data => {
         setHomeparty(data.posts);
@@ -51,22 +55,22 @@ const Homepartylist = () => {
         </S.SelectSort>
       </S.Title>
       <S.DisplayGrid>
-        {homeparty.map(
-          ({ id, imageUrl, title, nickname, profileImage, roomSizeName }) => (
-            <S.HomepartyBox key={id}>
-              <S.HomepartyBoxImg
-                src={imageUrl}
-                alt="집 세로 사진"
-                onClick={() => navigate(`homepartydetail/${id}`)}
+        {homeparty.map(({ id, imageUrl, title, nickname, profileImage }) => (
+          <S.HomepartyBox key={id}>
+            <S.HomepartyBoxImg
+              src={imageUrl}
+              alt="집 세로 사진"
+              onClick={() => navigate(`/homepartydetail/${id}`)}
+            />
+            <S.HomepartyBoxP>{title}</S.HomepartyBoxP>
+            <S.UserInfo>
+              <S.HomepartyBoxUser
+                src={profileImage ? profileImage : '/images/frog.png'}
               />
-              <S.HomepartyBoxP>{title}</S.HomepartyBoxP>
-              <S.UserInfo>
-                <S.HomepartyBoxUser src={profileImage} />
-                <S.UserName>{nickname}</S.UserName>
-              </S.UserInfo>
-            </S.HomepartyBox>
-          )
-        )}
+              <S.UserName>{nickname}</S.UserName>
+            </S.UserInfo>
+          </S.HomepartyBox>
+        ))}
       </S.DisplayGrid>
     </Width>
   );
