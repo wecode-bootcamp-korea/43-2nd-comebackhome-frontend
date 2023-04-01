@@ -3,12 +3,11 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { REST_API_KEY } from './Oauth';
 import { API, REDIRECT_URI } from '../../config';
 import Spinner from '../../components/Spinner/Spinner';
-
 const Redirect = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const code = searchParams.get('code');
-
+  console.log(code);
   useEffect(() => {
     fetch(
       `${API.getToken}id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&code=${code}`,
@@ -30,14 +29,12 @@ const Redirect = () => {
           .then(res => res.json())
           .then(data => {
             if (data) {
-              localStorage.setItem('token', data.access_token);
+              localStorage.setItem('token', data.accessToken);
               navigate('/');
             }
           });
       });
   }, []);
-
   return <Spinner />;
 };
-
 export default Redirect;

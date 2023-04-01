@@ -82,7 +82,7 @@ export const AptSize = styled.div`
 
 export const Img = styled.img`
   width: 700px;
-  height: 700px;
+  height: 500px;
   margin-top: 30px;
 `;
 
@@ -157,13 +157,14 @@ export const Input = styled.input`
   color: #568a35;
   font-weight: 700;
 `;
+
 export const CommentBtn = styled.button`
   position: absolute;
-  width: 80px;
+  width: 60px;
   right: 63px;
   border: none;
   background-color: white;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 3px;
 
@@ -171,4 +172,78 @@ export const CommentBtn = styled.button`
     cursor: pointer;
     color: #568a35;
   }
+`;
+
+export const ImageMarkerWrap = styled.div`
+  width: 700px;
+  margin-top: 30px;
+  font-family: IBMPlexSansKR-Regular;
+  .image-marker__marker {
+    display: ${({ show }) => {
+      if (show) {
+        return 'block';
+      }
+      return 'none';
+    }};
+  }
+  &:hover .image-marker__marker {
+    display: block;
+  }
+  .image-marker__image {
+    margin: 0 auto;
+    width: 100%;
+    height: 700px;
+  }
+`;
+
+export const MarkerButton = styled.div`
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 23px;
+  line-height: 42px;
+  color: rgba(255, 255, 255);
+  text-align: center;
+  background-color: #568a35;
+  cursor: pointer;
+`;
+
+export const ProductInfoWrap = styled.div`
+  position: absolute;
+  top: 47px;
+  left: -54px;
+  display: ${({ dispaly }) => (dispaly ? 'flex' : 'none')};
+  align-items: center;
+  padding: 5px;
+  border: 2px solid rgba(86, 138, 53, 0.7);
+  border-radius: 5px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+`;
+
+export const ProductImg = styled.img`
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+`;
+
+export const Text = styled.p`
+  min-width: 128px;
+  word-break: break-all;
+`;
+
+export const ProductWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60px;
+  margin-left: 10px;
+`;
+
+export const CommentZone = styled.div`
+  height: auto;
 `;

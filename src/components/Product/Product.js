@@ -2,21 +2,23 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './ProductStyled.js';
 
-const Product = ({ id, thumbnail, productName, price, discount }) => {
+const Product = ({ id, imageUrl, name, discountPrice, discount_rate }) => {
   const navigate = useNavigate();
   const moveToProductDetail = id => {
     navigate(`/productDetail/${id}`);
   };
-
+  console.log('imageUrl', imageUrl);
   return (
     <S.ShoppingMap key={id} onClick={() => moveToProductDetail(id)}>
-      <S.ShoppingItem src={thumbnail} alt="제품 사진" />
+      <S.ShoppingItem src={imageUrl} alt="제품 사진" />
       <S.ShopingItemSpan>[오늘의 딜] </S.ShopingItemSpan>
       <S.IconSizeImg src="images/sale.png" alt="sale" />
-      <S.ShopingItemP>{productName}</S.ShopingItemP>
+      <S.ShopingItemP>{name}</S.ShopingItemP>
       <span />
-      <S.ShopingItemSpan strong>{discount}</S.ShopingItemSpan>
-      <S.ShopingItemSpan>{Number(price).toLocaleString()}원</S.ShopingItemSpan>
+      <S.ShopingItemSpan strong>{discount_rate}%</S.ShopingItemSpan>
+      <S.ShopingItemSpan>
+        {Number(discountPrice).toLocaleString()}원
+      </S.ShopingItemSpan>
     </S.ShoppingMap>
   );
 };

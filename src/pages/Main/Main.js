@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API } from '../../config';
 import { Width } from '../../styles/common';
 import * as S from './MainStyled.js';
 import Product from '../../components/Product/Product';
@@ -22,18 +23,18 @@ const Main = () => {
   };
 
   useEffect(() => {
-    fetch('./data/productItem.json')
+    fetch(`${API.productlist}`)
       .then(res => res.json())
       .then(data => {
-        setProductData(data);
+        setProductData(data.products.productData);
       });
   }, []);
 
   useEffect(() => {
-    fetch('./data/HomeParty.json')
+    fetch(`${API.homepartylist}`)
       .then(res => res.json())
       .then(data => {
-        setHomePartyData(data);
+        setHomePartyData(data.posts);
       });
   }, []);
 
@@ -42,14 +43,14 @@ const Main = () => {
       <S.Carousel>
         <S.Room>
           <S.SliderSlide {...settings}>
-            {homePartyData.map(({ id, img }) => {
+            {homePartyData.map(({ id, imageUrl }) => {
               return (
                 <div
                   to="signin"
                   key={id}
                   onClick={() => navigate(`homeparty/${id}`)}
                 >
-                  <S.SlidePicture src={img} />
+                  <S.SlidePicture src={imageUrl} />
                 </div>
               );
             })}
@@ -79,10 +80,10 @@ const Main = () => {
               <Product
                 key={item.id}
                 id={item.id}
-                thumbnail={item.thumbnail}
-                productName={item.productName}
-                price={item.price}
-                discount={item.discount}
+                imageUrl={item.imageUrl}
+                name={item.name}
+                discountPrice={item.discountPrice}
+                discount_rate={item.discount_rate}
               />
             )
         )}
