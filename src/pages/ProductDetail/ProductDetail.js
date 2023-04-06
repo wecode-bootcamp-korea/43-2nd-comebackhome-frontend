@@ -185,14 +185,14 @@ const ProductDetail = () => {
                   {(discountPrice * count).toLocaleString()}원
                 </S.Text>
               </S.TotalPrice>
-              <S.ProductButton onClick={buttonClick} value="Cart">
+              <S.ProductButton onClick={buttonClick} value="cart">
                 장바구니
               </S.ProductButton>
               <S.ProductButton
                 backColor="#568a35"
                 color="white"
                 onClick={buttonClick}
-                value="Order"
+                value="order"
               >
                 결제하기
               </S.ProductButton>

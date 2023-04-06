@@ -29,8 +29,9 @@ const Redirect = () => {
           .then(res => res.json())
           .then(data => {
             if (data) {
-              console.log('data', data);
               localStorage.setItem('token', data.accessToken);
+              localStorage.setItem('nickname', data.nickname);
+              localStorage.setItem('profileImage', data.profileImage);
               navigate(-2);
             }
           });

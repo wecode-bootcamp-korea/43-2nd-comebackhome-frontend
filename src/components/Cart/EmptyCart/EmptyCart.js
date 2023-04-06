@@ -6,7 +6,7 @@ const EmptyCart = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/');
+    navigate('/productlist?offset=0&limit=8');
   };
 
   return (

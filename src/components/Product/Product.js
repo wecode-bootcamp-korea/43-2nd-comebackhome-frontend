@@ -7,7 +7,7 @@ const Product = ({ id, imageUrl, name, discountPrice, discount_rate }) => {
   const moveToProductDetail = id => {
     navigate(`/productdetail/${id}`);
   };
-  console.log('imageUrl', imageUrl);
+
   return (
     <S.ShoppingMap key={id} onClick={() => moveToProductDetail(id)}>
       <S.ShoppingItem src={imageUrl} alt="제품 사진" />

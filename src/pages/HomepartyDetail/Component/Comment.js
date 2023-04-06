@@ -31,55 +31,57 @@ export const Comment = ({
   };
 
   const enterComment = e => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && token) {
       sendComments();
     }
   };
 
   const sendComments = (event, id) => {
-    if (currentComment === '') {
-      return;
-    }
-
-    const reComment = {
-      commentId: commentId,
-      replynickname: myNickname,
-      replyprofileImage: myProfileImage,
-      replyCommentContent: currentComment,
-      date: todayDate,
-    };
-
-    const updateReply = commentList.map(comment => {
-      if (comment.commentId === id) {
-        return {
-          ...comment,
-          reply_comments: [
-            ...(comment.reply_comments ? comment.reply_comments : []),
-            reComment,
-          ],
-        };
-      } else {
-        return comment;
+    if (token) {
+      if (currentComment === '') {
+        return;
       }
-    });
 
-    setCommentList(updateReply);
-    setcurrentComment('');
-    setshowReplyInput(false);
-    setAddComment(addComment => addComment + 1);
-
-    fetch(`${API.reply}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-        authorization: token,
-      },
-      body: JSON.stringify({
+      const reComment = {
         commentId: commentId,
-        postId: postId,
-        contents: currentComment,
-      }),
-    }).then(response => response.json());
+        replynickname: myNickname,
+        replyprofileImage: myProfileImage,
+        replyCommentContent: currentComment,
+        date: todayDate,
+      };
+
+      const updateReply = commentList.map(comment => {
+        if (comment.commentId === id) {
+          return {
+            ...comment,
+            reply_comments: [
+              ...(comment.reply_comments ? comment.reply_comments : []),
+              reComment,
+            ],
+          };
+        } else {
+          return comment;
+        }
+      });
+
+      setCommentList(updateReply);
+      setcurrentComment('');
+      setshowReplyInput(false);
+      setAddComment(addComment => addComment + 1);
+
+      fetch(`${API.reply}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          authorization: token,
+        },
+        body: JSON.stringify({
+          commentId: commentId,
+          postId: postId,
+          contents: currentComment,
+        }),
+      }).then(response => response.json());
+    }
   };
 
   return (
@@ -105,14 +107,18 @@ export const Comment = ({
       {showReplyInput && (
         <S.ReCommentUserBox>
           <S.CommentUserPic src="/images/frog.png" alt="사용자" />
-          <S.Input
-            placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
-            value={currentComment}
-            onChange={e => {
-              setcurrentComment(e.target.value);
-            }}
-            onKeyUp={enterComment}
-          />
+          {token ? (
+            <S.Input
+              placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
+              value={currentComment}
+              onChange={e => {
+                setcurrentComment(e.target.value);
+              }}
+              onKeyUp={enterComment}
+            />
+          ) : (
+            <S.Input placeholder="로그인을 해주세요 :)" />
+          )}
           <S.CommentBtn onClick={sendComments}>입력</S.CommentBtn>
         </S.ReCommentUserBox>
       )}

@@ -7,8 +7,11 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  const nickname = localStorage.getItem('nickname');
+  const profileImage = localStorage.getItem('profileImage');
   const handleLogout = () => {
     localStorage.removeItem('token');
+    navigate('/');
     setIsOpen(isOpen => !isOpen);
   };
 
@@ -46,9 +49,9 @@ const Nav = () => {
             <S.Li>
               <S.Astyled>
                 <S.ProfileImg>
-                  <img src="/images/thumbnail.jpg" alt="프로필" />
+                  <img src={profileImage} alt="프로필" />
                 </S.ProfileImg>
-                닉네임
+                {nickname}
               </S.Astyled>
               <S.Logout onClick={handleLogout}>로그아웃</S.Logout>
             </S.Li>
@@ -68,11 +71,13 @@ const Nav = () => {
           >
             <S.Astyled>회원가입</S.Astyled>
           </S.Li>
-          <S.CartImageBox>
-            <Link to="/cart">
-              <S.CartImage src="/images/add-cart.png" alt="장바구니" />
-            </Link>
-          </S.CartImageBox>
+          {token && (
+            <S.CartImageBox>
+              <Link to="/cart">
+                <S.CartImage src="/images/add-cart.png" alt="장바구니" />
+              </Link>
+            </S.CartImageBox>
+          )}
         </S.Navcontents>
         <GlobalModal isOpen={isOpen} setIsOpen={setIsOpen} text="로그아웃" />
       </S.Container>

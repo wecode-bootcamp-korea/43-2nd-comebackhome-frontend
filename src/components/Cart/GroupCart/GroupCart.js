@@ -256,10 +256,12 @@ const GroupCart = () => {
             </S.CartSideBarContents>
             <S.CartSideBarButton
               onClick={() => {
-                navigate('/order');
+                if (checkList.length > 0) {
+                  navigate('/order');
+                }
               }}
             >
-              구매하기{' '}
+              구매하기
             </S.CartSideBarButton>
           </S.CartSideBarBox>
         </S.CartSideBarContainer>

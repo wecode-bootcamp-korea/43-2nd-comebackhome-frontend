@@ -355,4 +355,8 @@ export const CartSideBarButton = styled.button`
   border-radius: 6px 6px 6px 6px;
   font-family: 'IBMPlexSansKR-Regular';
   font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 `;

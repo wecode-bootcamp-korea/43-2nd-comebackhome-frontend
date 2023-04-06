@@ -13,4 +13,5 @@ export const API = {
   productdetail: `${BASE_URL}/products`,
   carts: `${BASE_URL}/carts`,
   productlist: `${BASE_URL}/products?`,
+  orders: `${BASE_URL}/orders`,
 };
