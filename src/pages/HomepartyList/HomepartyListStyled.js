@@ -8,7 +8,7 @@ export const TitleText = styled.p`
 `;
 
 export const Title = styled.div`
-  display: flex;
+  ${({ theme }) => theme.flexBox()};
   font-family: 'IBMPlexSansKR-Regular';
   font-size: 18px;
   font-weight: 700;
@@ -77,9 +77,7 @@ export const HomepartyBoxUser = styled.img`
 `;
 
 export const UserInfo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center', 'center')};
 `;
 
 export const UserName = styled.span`

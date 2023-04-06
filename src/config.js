@@ -10,6 +10,7 @@ export const API = {
   getComment: `${BASE_URL}/comments`,
   comment: `${BASE_URL}/comments/post`,
   reply: `${BASE_URL}/comments/reply`,
+  productdetail: `${BASE_URL}/products`,
   carts: `${BASE_URL}/carts`,
   productlist: `${BASE_URL}/products?`,
 };

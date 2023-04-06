@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "image_url": "https://as1.ftcdn.net/v2/jpg/00/88/40/00/1000_F_88400050_oFW3YlISE81uwIwePt83h747pvlB6yrl.jpg",
+      "name": "냄새잡는 심플 디자인 휴지통",
+      "color": "그레이",
+      "discount_rate": 16,
+      "stock": 999,
+      "price": "59000",
+      "discountPrice": "49560"
+    }
+  ]
+}

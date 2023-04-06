@@ -11,19 +11,13 @@ export const CartCountInput = styled.div`
   width: 100%;
   align-items: center;
   color: #2f3438;
-  /* margin-top: 0; */
 `;
-
 export const CartCountInputWrap = styled.div`
   display: flex;
   padding: 7px 6px;
   background: #ffffff;
   border: 1px solid #dadde0;
-
-  /* margin-right: 600px; */
-  /* padding: 0 6px; */
 `;
-
 export const CartCountMinus = styled.button`
   display: inline-block;
   width: auto;
@@ -34,7 +28,6 @@ export const CartCountMinus = styled.button`
   line-height: 1;
   cursor: pointer;
 `;
-
 export const CartCountButton = styled.span`
   font-size: 14px;
   line-height: 18px;
@@ -45,10 +38,8 @@ export const CartCountButton = styled.span`
   margin-right: 8px;
   margin-left: 8px;
 `;
-
 export const CartCountPlus = styled.button`
   display: inline-block;
-  /* font-size: 20px; */
   border: none;
   width: auto;
   background-color: white;
@@ -56,7 +47,6 @@ export const CartCountPlus = styled.button`
   margin-right: 5px;
   cursor: pointer;
 `;
-
 export const CartPrice = styled.div`
   width: max-content;
   font-size: 16px;

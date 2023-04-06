@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const ProductWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
+  ${({ theme }) => theme.flexBox('', 'space-between')};
   font-weight: ${({ weight }) => weight};
 `;
 
@@ -19,7 +18,7 @@ export const ProductInfo = styled.div`
 `;
 
 export const Title = styled.div`
-  border-bottom: 3px solid lightgrey;
+  border-bottom: 3px solid #afd485;
   font-size: 25px;
 `;
 
@@ -30,7 +29,7 @@ export const ProductNumber = styled.div`
 export const ProductOption = styled.div`
   margin-top: 15px;
   font-size: 12px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #afd485;
 `;
 
 export const TotalPrice = styled.div`
@@ -48,11 +47,12 @@ export const Text = styled.p`
   margin-bottom: ${({ marginBottom }) => marginBottom};
   font-family: ${({ font }) => font};
   font-size: ${({ size }) => size};
-  text-decoration: ${({ decoration }) => (decoration ? 'line-through' : '')};
-  vertical-align: ${({ vertical }) => (vertical ? 'top' : '')};
+  text-decoration: ${({ decoration }) => decoration && 'line-through'};
+  vertical-align: ${({ vertical }) => vertical && 'top'};
   color: ${({ color }) => color};
   padding: ${({ padding }) => padding};
   background-color: ${({ backgroundColor }) => backgroundColor};
+  border-bottom: ${({ borderBottom }) => borderBottom && '1px solid #afd485'};
 `;
 
 export const Span = styled.span`
@@ -60,7 +60,7 @@ export const Span = styled.span`
   margin-right: ${({ marginRight }) => marginRight};
   font-family: ${({ font }) => font};
   font-size: ${({ size }) => size};
-  text-decoration: ${({ decoration }) => (decoration ? 'line-through' : '')};
+  text-decoration: ${({ decoration }) => decoration && 'line-through'};
   vertical-align: ${({ vertical }) => vertical};
   color: ${({ color }) => color};
 `;
@@ -83,6 +83,9 @@ export const ProductButton = styled.button`
       background-color:${backColor};
     `;
   }}
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const ProductOptionBox = styled.div`
@@ -100,22 +103,31 @@ export const ProductPrice = styled.div`
 export const PriceButton = styled.button`
   width: 23px;
   border: none;
-  font-size: 20px;
+  font-size: 23px;
   text-align: center;
   vertical-align: top;
   cursor: pointer;
   background-color: white;
   border-left: ${({ borderLeft }) =>
-    borderLeft ? '1px solid rgb(210, 210, 210)' : ''};
+    borderLeft && '1px solid rgb(210, 210, 210)'};
   border-right: ${({ borderRight }) =>
-    borderRight ? '1px solid rgb(210, 210, 210)' : ''};
+    borderRight && '1px solid rgb(210, 210, 210)'};
 `;
 
-export const PriceCount = styled.div`
+export const PriceCount = styled.input`
   display: inline-block;
   width: 43px;
   font-size: 23px;
   text-align: center;
+  border: none;
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 export const MaxQuantity = styled.div`

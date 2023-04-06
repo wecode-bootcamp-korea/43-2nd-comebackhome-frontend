@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import AnsungtangmyunBold from '../font/Ansungtangmyun-Bold.ttf';
 import EF_jejudoldam from '../font/EF_jejudoldam.ttf';
+import Nanum from '../font/Nanum.ttf';
 
 const GlobalStyle = createGlobalStyle`
 ${reset}  
@@ -20,6 +21,10 @@ ${reset}
     font-weight: normal;
     font-style: normal;
   }  
+  @font-face{
+    font-family: "Nanum";
+    src: url(${Nanum})
+  }
   body{
     font-family: IBMPlexSansKR-Regular;
   }

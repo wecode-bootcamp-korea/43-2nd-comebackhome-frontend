@@ -5,7 +5,7 @@ import * as S from './ProductStyled.js';
 const Product = ({ id, imageUrl, name, discountPrice, discount_rate }) => {
   const navigate = useNavigate();
   const moveToProductDetail = id => {
-    navigate(`/productDetail/${id}`);
+    navigate(`/productdetail/${id}`);
   };
   console.log('imageUrl', imageUrl);
   return (

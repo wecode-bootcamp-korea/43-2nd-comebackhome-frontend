@@ -10,7 +10,6 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import HomepartyList from './pages/HomepartyList/HomepartyList';
 import Redirect from './pages/SignIn/Redirect';
 import HomepartyDetail from './pages/HomepartyDetail/HomepartyDetail';
-
 import ProductList from './pages/ProductList/ProductList';
 
 const Router = () => {

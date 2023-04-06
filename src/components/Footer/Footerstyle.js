@@ -5,7 +5,6 @@ export const FooterMain = styled.div`
   margin-top: 80px;
   padding: 40px 0px;
   background-color: rgb(247, 249, 250);
-  font-family: IBMPlexSansKR-Regular;
 `;
 
 export const FooterWrap = styled.div`
@@ -31,9 +30,9 @@ export const FooterMember = styled.div`
 `;
 
 export const FooterInfo = styled.div`
+  ${({ theme }) => theme.flexBox()};
   font-size: 12px;
   line-height: 14px;
-  display: flex;
   flex-direction: column;
   gap: 12px;
   color: rgb(130, 140, 148);
@@ -56,12 +55,11 @@ export const InlineText = styled.p`
 
 export const BlockText = styled.p`
   margin-bottom: 15px;
-  font-weight: ${({ name }) => (name === '고객센터' ? '700' : '')};
+  font-weight: ${({ name }) => name === '고객센터' && '700'};
 `;
 
 export const DisplayText = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center')};
   img {
     width: 32px;
     margin-right: 8px;

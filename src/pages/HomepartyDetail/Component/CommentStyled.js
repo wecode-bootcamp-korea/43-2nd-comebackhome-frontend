@@ -7,16 +7,15 @@ export const CommentWrap = styled.div`
 export const SubTitle = styled.div`
   font-family: IBMPlexSansKR-Regular;
   font-size: 17px;
-  font-weight: ${({ bold }) => (bold ? '700' : '0')};
-  margin-top: ${({ top }) => (top ? '10px' : '0')};
-  margin-left: ${({ left }) => (left ? '20px' : '0')};
+  font-weight: ${({ bold }) => bold && '700'};
+  margin-top: ${({ top }) => top && '10px'};
+  margin-left: ${({ left }) => left && '20px'};
   color: ${({ color }) => (color ? '#568a35' : 'black')};
   width: ${({ width }) => (width ? '357px' : 'auto')};
 `;
 
 export const CommentUserBox = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center')};
 `;
 
 export const CommentUserPic = styled.img`

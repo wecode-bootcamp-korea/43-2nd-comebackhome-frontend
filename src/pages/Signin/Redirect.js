@@ -31,7 +31,7 @@ const Redirect = () => {
             if (data) {
               console.log('data', data);
               localStorage.setItem('token', data.accessToken);
-              navigate('/');
+              navigate(-2);
             }
           });
       });

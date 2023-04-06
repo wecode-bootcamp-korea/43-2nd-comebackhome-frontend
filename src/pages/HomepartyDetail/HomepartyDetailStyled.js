@@ -11,10 +11,9 @@ export const WidthMe = styled.div`
 export const SubTitle = styled.div`
   font-family: IBMPlexSansKR-Regular;
   font-size: 15px;
-
   color: ${({ color }) => (color ? '#568a35' : 'black')};
-  font-weight: ${({ bold }) => (bold ? '700' : '0')};
-  margin-top: ${({ top }) => (top ? '10px' : '0')};
+  font-weight: ${({ bold }) => bold && '700'};
+  margin-top: ${({ top }) => top && '10px'};
 `;
 
 export const Title = styled.div`
@@ -25,14 +24,11 @@ export const Title = styled.div`
   margin-bottom: 30px;
 `;
 export const UserDetail = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center', 'space-between')};
 `;
 
 export const UserInfo = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center')};
   margin-bottom: 25px;
 `;
 
@@ -58,8 +54,7 @@ export const Button = styled.button`
 `;
 
 export const IconFlex = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center')};
 `;
 
 export const ImgIcon = styled.img`
@@ -77,8 +72,7 @@ export const BacgroundAptSize = styled.div`
 `;
 
 export const AptSize = styled.div`
-  display: flex;
-  justify-content: space-around;
+  ${({ theme }) => theme.flexBox('', 'space-around')};
   width: 280px;
 `;
 
@@ -118,7 +112,7 @@ export const ShoppingListMap = styled.img`
 `;
 
 export const ProductListing = styled.div`
-  display: flex;
+  ${({ theme }) => theme.flexBox()};
   gap: 26px;
   overflow-x: hidden;
 `;
@@ -139,8 +133,7 @@ export const Comment = styled.span`
 `;
 
 export const CommentUserBox = styled.div`
-  display: flex;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('center')};
 `;
 
 export const CommentUserPic = styled.img`
