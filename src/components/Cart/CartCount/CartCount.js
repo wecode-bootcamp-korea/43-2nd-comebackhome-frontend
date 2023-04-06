@@ -1,7 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import * as S from './CartCountStyle';
 
 const CartCount = ({ price, onCountChange, productStock, quantity }) => {
@@ -20,6 +17,7 @@ const CartCount = ({ price, onCountChange, productStock, quantity }) => {
   useEffect(() => {
     onCountChange(count);
   }, [count]);
+
   return (
     <S.CartCountInput>
       <S.CartCountInputWrap>

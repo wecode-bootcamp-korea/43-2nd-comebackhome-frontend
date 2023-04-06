@@ -1,21 +1,16 @@
 import styled from 'styled-components';
 
 export const FlexCenter = styled.div`
-  display: flex;
-  height: 500px;
-  -webkit-box-pack: center;
-  justify-content: center;
-  align-items: center;
+  ${({ theme }) => theme.flexBox('', 'center')};
 `;
 
 export const Container = styled.div`
+  ${({ theme }) => theme.flexBox('center')};
   border: 2px dotted #afd485;
   border-radius: 5px;
   width: 370px;
   height: 300px;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   line-height: 2;
 `;
 

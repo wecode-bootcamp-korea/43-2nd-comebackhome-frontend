@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 export const GroupCart = styled.div`
-  display: flex;
+  ${({ theme }) => theme.flexBox()};
   position: relative;
   max-width: 1256px;
-  /* margin: 110px auto 0px; */
   padding: 0 60px;
   font-family: 'IBMPlexSansKR-Regular';
   font-weight: 700;
@@ -17,12 +16,11 @@ export const CartContainer = styled.div`
   min-height: 1px;
 `;
 export const CartSelect = styled.div`
-  display: flex;
+  ${({ theme }) => theme.flexBox('', 'space-between')};
   padding: 0 26px;
   background: none;
   border: none;
   margin: 0 0 11px;
-  justify-content: space-between;
 `;
 export const CheckBox = styled.span``;
 export const CheckboxLabel = styled.label`
@@ -247,9 +245,7 @@ export const CartCountArticle = styled.article`
   color: #2f3438;
 `;
 export const CartCountBox = styled.div`
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  ${({ theme }) => theme.flexBox('flex-end', 'space-between')};
 `;
 export const CartPriceWrap = styled.div`
   flex: 1;
@@ -297,10 +293,8 @@ export const CartSideBarContents = styled.div`
   padding: 10px 50px;
 `;
 export const CartTotalPrice = styled.div`
+  ${({ theme }) => theme.flexBox('center', 'space-between')};
   width: 325px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 20px -20px;
   font-size: 16px;
   color: #424242;
@@ -311,10 +305,8 @@ export const CartTotalPriceNumber = styled.span`
   flex: 0 auto;
 `;
 export const CartTotalDeliver = styled.div`
+  ${({ theme }) => theme.flexBox('center', 'space-between')};
   width: 325px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 20px -20px;
   font-size: 16px;
   color: #424242;
@@ -325,10 +317,8 @@ export const CartTotalDeliverNumber = styled.span`
   flex: 0 auto;
 `;
 export const CartTotalDiscount = styled.div`
+  ${({ theme }) => theme.flexBox('center', 'space-between')};
   width: 325px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 20px -20px;
   font-size: 16px;
   color: #424242;
@@ -339,9 +329,7 @@ export const CartTotalDiscountNumber = styled.span`
   flex: 0 auto;
 `;
 export const CartSummary = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${({ theme }) => theme.flexBox('center', 'space-between')};
   margin: 12px -20px;
   font-size: 20px;
   font-family: 'IBMPlexSansKR-Regular';

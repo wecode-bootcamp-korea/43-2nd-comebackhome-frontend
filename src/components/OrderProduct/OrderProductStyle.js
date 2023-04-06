@@ -8,11 +8,9 @@ export const CartBox = styled.div`
 `;
 
 export const CartHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
+  ${({ theme }) => theme.flexBox('', 'space-between')};
   padding: 11px 16px 10px;
-
-  background-color: #afd485;
+  background-color: rgba(175, 212, 133, 0.4);
 `;
 
 export const OrderProductWrap = styled.div`

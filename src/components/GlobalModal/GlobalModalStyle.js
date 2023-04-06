@@ -1,20 +1,21 @@
 import styled from 'styled-components';
 
 export const ButtonWrap = styled.div`
-  display: flex;
-  justify-content: space-evenly;
+  ${({ theme }) => theme.flexBox('', 'space-evenly')};
   margin: 20px 0px 15px 0px;
 `;
 
-export const customStyles = {
+export const CustomStyles = {
   content: {
     display: 'flex',
+    border: '1px solid  #afd485',
+    justifyContent: 'center',
     flexDirection: 'column',
     width: '300px',
-    height: '68px',
+    height: '105px',
     margin: '229px auto',
     fontSize: '18px',
-    fontFamily: 'AnsungtangmyunBold',
+    fontWeight: '700',
     textAlign: 'center',
     overflow: 'hidden',
     zIndex: '100',
@@ -22,14 +23,25 @@ export const customStyles = {
 };
 
 export const Button = styled.button`
-  width: 95px;
-  border: 1px solid gray;
-  border-radius: 5px;
+  display: inline-block;
+  width: 50%;
+  height: 60px;
+  vertical-align: top;
+  text-align: center;
   font-size: 16px;
-  font-family: AnsungtangmyunBold;
-  background-color: rgba(255, 255, 255, 0.75);
-  &:hover {
-    background-color: #568a35;
-    color: white;
-  }
+  font-weight: 700;
+  line-height: 58px;
+  letter-spacing: -0.01rem;
+  cursor: pointer;
+  ${({ backColor, color }) => {
+    return `
+      border: none;
+      color:${color};
+      background-color:${backColor};
+    `;
+  }}
+`;
+
+export const Text = styled.div`
+  margin-top: 15px;
 `;

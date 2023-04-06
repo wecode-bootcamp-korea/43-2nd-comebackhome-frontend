@@ -1,22 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import GlobalModal from '../../components/GlobalModal/GlobalModal';
 import * as S from './NavStyle';
-import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
   const handleLogout = () => {
     localStorage.removeItem('token');
-    alert('로그아웃 되었습니다.');
+    setIsOpen(isOpen => !isOpen);
   };
+
   return (
     <S.Header>
       <S.Container>
         <S.TitleLogo>
           <Link to="/" className="LinkLogo">
             <img
-              src="/images/comebackhome2.png"
+              style={{ width: '130px' }}
+              src="/images/콤배콤 로고제작.png"
               alt="콤배콤"
               className="ImgLogo"
             />
@@ -71,6 +74,7 @@ const Nav = () => {
             </Link>
           </S.CartImageBox>
         </S.Navcontents>
+        <GlobalModal isOpen={isOpen} setIsOpen={setIsOpen} text="로그아웃" />
       </S.Container>
     </S.Header>
   );

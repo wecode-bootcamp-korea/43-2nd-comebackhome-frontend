@@ -79,8 +79,7 @@ export const SliderSlide = styled(Slider)`
     color: white;
   }
   .slick-dots {
-    display: flex;
-    justify-content: center;
+    ${({ theme }) => theme.flexBox('', 'center')};
     bottom: 30px;
     color: white;
 

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const EmptyCart = styled.div`
-  display: flex;
-  justify-content: center;
+  ${({ theme }) => theme.flexBox('', 'center')};
   max-width: 1256px;
   margin: 110px auto 0px;
   padding: 0 60px;
-  font-family: AnsungtangmyunBold;
+  font-weight: 700;
 `;
 
 export const EmptyCartWrap = styled.div`
