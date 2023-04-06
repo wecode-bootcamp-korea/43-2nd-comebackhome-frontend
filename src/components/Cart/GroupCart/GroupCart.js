@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import GlobalModal from '../../GlobalModal/GlobalModal';
 import CheckboxInput from './CheckboxInput/CheckboxInput';
 import CartCheckbox from './CartCheckbox/CartCheckbox';
 import CartCount from '../CartCount/CartCount';
@@ -11,6 +12,7 @@ const GroupCart = () => {
   const [cartData, setCartData] = useState([]);
   const [checkList, setCheckList] = useState([]);
   const [checkboxNum, setcheckboxNum] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
@@ -100,6 +102,14 @@ const GroupCart = () => {
     })
       .then(response => response.json())
       .then(data => setCartData(data.updateProduct));
+  };
+
+  const open = () => {
+    if (checkList.length > 0) {
+      navigate('/order');
+    } else {
+      setIsOpen(isopen => !isopen);
+    }
   };
 
   const cartTotalPrice = cartData
@@ -254,15 +264,13 @@ const GroupCart = () => {
                 </S.CartSummaryNumber>
               </S.CartSummary>
             </S.CartSideBarContents>
-            <S.CartSideBarButton
-              onClick={() => {
-                if (checkList.length > 0) {
-                  navigate('/order');
-                }
-              }}
-            >
-              구매하기
-            </S.CartSideBarButton>
+            <S.CartSideBarButton onClick={open}>구매하기</S.CartSideBarButton>
+            <GlobalModal
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              checkList={checkList}
+              text="구매"
+            />
           </S.CartSideBarBox>
         </S.CartSideBarContainer>
       </S.CartSideBarWrap>

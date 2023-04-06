@@ -4,14 +4,30 @@ import { useNavigate } from 'react-router-dom';
 import { API } from '../../config';
 import * as S from './GlobalModalStyle';
 
-const GlobalModal = ({ text, isOpen, setIsOpen, count, id }) => {
+const GlobalModal = ({ text, isOpen, setIsOpen, count, id, checkList }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
   const modalSwitch = e => {
     const { value } = e.target;
     if (value === 'NO') {
-      setIsOpen(isOpen => !isOpen);
+      fetch(`${API.carts}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          authorization: token,
+        },
+        body: JSON.stringify({
+          productId: id,
+          quantity: Number(count),
+        }),
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            setIsOpen(isOpen => !isOpen);
+          }
+        });
     } else if (!token) {
       navigate(`/signin`);
     } else if (token && value === 'YES') {
@@ -76,6 +92,17 @@ const GlobalModal = ({ text, isOpen, setIsOpen, count, id }) => {
     );
   }
 
+  if (text === '구매' && checkList.length <= 0) {
+    return (
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(isOpen => !isOpen)}
+        style={S.CustomStyles}
+      >
+        <S.Text>상품을 선택해주세요</S.Text>
+      </Modal>
+    );
+  }
   return (
     <Modal
       isOpen={isOpen}

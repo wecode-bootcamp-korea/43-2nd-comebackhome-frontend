@@ -1,41 +1,39 @@
 import styled from 'styled-components';
 export const GroupCart = styled.div`
-  ${({ theme }) => theme.flexBox()};
+  ${({ theme }) => theme.flexBox('', 'center')};
   position: relative;
   max-width: 1256px;
-  padding: 0 60px;
-  font-family: 'IBMPlexSansKR-Regular';
   font-weight: 700;
 `;
 export const CartContainer = styled.div`
-  margin-right: auto;
-  margin-left: auto;
   width: 1256px;
   max-width: 100%;
-  box-sizing: border-box;
   min-height: 1px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
 `;
 export const CartSelect = styled.div`
   ${({ theme }) => theme.flexBox('', 'space-between')};
   padding: 0 26px;
-  background: none;
-  border: none;
   margin: 0 0 11px;
+  border: none;
+  background: none;
 `;
 export const CheckBox = styled.span``;
 export const CheckboxLabel = styled.label`
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
   flex-direction: row;
   padding-right: 6px;
-  display: inline-flex;
-  align-items: center;
   vertical-align: middle;
-  width: 100%;
 `;
 export const CheckboxWrap = styled.div`
   position: relative;
   display: inline-block;
-  font-size: 0;
   padding: 9px;
+  font-size: 0;
 `;
 export const CheckboxInput = styled.input`
   position: absolute;
@@ -52,8 +50,8 @@ export const CheckboxInput = styled.input`
 `;
 export const CheckboxCheck = styled.span`
   border-color: #35c5f0;
-  background-color: #35c5f0;
   color: #fff;
+  background-color: #35c5f0;
 `;
 export const CheckboxPoint = styled.svg`
   width: 1em;
@@ -77,11 +75,11 @@ export const DelButton = styled.button`
   display: inline-block;
   margin: 2px -3px 0;
   padding: 3px;
-  background: none;
   border: none;
   color: #424242;
   font-family: 'IBMPlexSansKR-Regular';
   font-weight: 700;
+  background: none;
   line-height: 1;
   transition: opacity 0.1s;
   &:hover {
@@ -105,8 +103,6 @@ export const CartTitle = styled.h1`
   text-align: center;
   color: #424242;
   background-color: rgba(175, 212, 133, 0.4);
-  font-family: 'IBMPlexSansKR-Regular';
-  font-weight: 700;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 `;
@@ -114,22 +110,22 @@ export const CartArticleBox = styled.article`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-style: solid;
+  border-radius: 6px;
   border-color: rgb(237, 237, 237);
   border-image: initial;
-  border-radius: 6px;
 `;
 export const CartListGroup = styled.li`
   background-color: rgb(255, 255, 255);
 `;
 export const CartProduct = styled.article`
-  padding: 20px 15px 20px 54px;
   position: relative;
+  padding: 20px 15px 20px 54px;
 `;
 export const CartProductSelect = styled.div`
-  left: 20px;
   position: absolute;
-  margin: -9px;
   top: 20px;
+  left: 20px;
+  margin: -9px;
 `;
 export const CartCheckboxWrap = styled.div`
   position: relative;
@@ -151,8 +147,8 @@ export const CartCheckbox = styled.input`
   accent-color: #568a35;
 `;
 export const CartSmallProduct = styled.a`
-  margin: 0 20px 12px 0;
   display: flex;
+  margin: 0 20px 12px 0;
 `;
 export const CartProductImgWrap = styled.div`
   flex: 0 0 auto;

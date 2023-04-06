@@ -11,6 +11,8 @@ const Nav = () => {
   const profileImage = localStorage.getItem('profileImage');
   const handleLogout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('nickname');
+    localStorage.removeItem('profileImage');
     navigate('/');
     setIsOpen(isOpen => !isOpen);
   };
