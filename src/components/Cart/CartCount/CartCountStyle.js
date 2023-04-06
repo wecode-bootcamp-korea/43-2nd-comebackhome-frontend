@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const CartCountInput = styled.div`
+  ${({ theme }) => theme.flexBox('', 'space-between')};
   box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
   margin: 0 0 12px 0;
   padding: 12px;
   border-radius: 4px;

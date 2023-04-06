@@ -84,7 +84,7 @@ export const Input = styled.input`
 export const BoxWrap = styled.div`
   ${({ theme }) => theme.flexBox()};
   padding: ${({ padding }) => padding || '8px 0px'};
-  width: ${({ width }) => width && '35%'};
+  width: ${({ width }) => width};
 `;
 
 export const InputWrap = styled.div`
@@ -105,11 +105,13 @@ export const Select = styled.select`
 `;
 
 export const PointButton = styled.button`
-  width: 55px;
+  width: 104px;
   margin-left: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #568a35;
+  background-color: rgb(86, 138, 53);
+  cursor: pointer;
+  font-weight: bold;
   cursor: pointer;
   color: #fff;
   &:hover {

@@ -105,14 +105,14 @@ const SERVICEINFO = [
     id: 1,
     title: `콤배콤 프로젝트 기간 `,
     subtitle: '2023. 03. 24~ 2023. 04. 07',
-    src: 'images/comebackhome.png',
+    src: '/images/comebackhome.png',
     alt: 'comebackhome1',
   },
   {
     id: 2,
     title:
       '고객님이 현금결제한 금액에 대해 wecode은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다. 서비스가입사실확인',
-    src: 'images/comebackhome.png',
+    src: '/images/comebackhome.png',
     alt: 'comebackhome2',
   },
 ];
@@ -120,19 +120,19 @@ const SERVICEINFO = [
 const LINK = [
   {
     id: 1,
-    src: 'images/icons8-github-32.png',
+    src: '/images/icons8-github-32.png',
     to: 'https://github.com/wecode-bootcamp-korea/43-2nd-comebackhome-frontend',
     alt: 'github',
   },
   {
     id: 2,
-    src: 'images/icons8-notion-32.png',
+    src: '/images/icons8-notion-32.png',
     to: 'https://wecode.notion.site/B-7b78a31908f543d8bd4f06441f2172c1',
     alt: 'notion',
   },
   {
     id: 3,
-    src: 'images/icons8-trello-32.png',
+    src: '/images/icons8-trello-32.png',
     to: 'https://trello.com/b/Xda4AZzI/2nd-comebackhome',
     alt: 'trello',
   },

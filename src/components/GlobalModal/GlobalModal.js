@@ -36,6 +36,22 @@ const GlobalModal = ({ text, isOpen, setIsOpen, count, id }) => {
     }
   };
 
+  if ((text === 'order' && !token) || (text === 'cart' && !token)) {
+    setTimeout(() => {
+      setIsOpen(isOpen => !isOpen);
+      navigate('/signin');
+    }, 1000);
+    return (
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(isOpen => !isOpen)}
+        style={S.CustomStyles}
+      >
+        로그인 해주세요!
+      </Modal>
+    );
+  }
+
   if (text === '로그아웃') {
     return (
       <Modal

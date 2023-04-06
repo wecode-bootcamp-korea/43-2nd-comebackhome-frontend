@@ -15,10 +15,11 @@ const HomepartyDetail = () => {
   const [addComment, setAddComment] = useState(0);
   const navigate = useNavigate();
   const params = useParams();
+  const token = localStorage.getItem('token');
   const myNickname = localStorage.getItem('nickname');
   const myProfileImage = localStorage.getItem('profileImage');
   const markers = shoppingItem.productInfo;
-  const token = localStorage.getItem('token');
+
   const CustomMarker = markers => {
     const { productsId, productUrl, productName, productPrice } = markers;
 
@@ -48,7 +49,7 @@ const HomepartyDetail = () => {
           onMouseLeave={() => {
             setgetproductId(0);
           }}
-          onClick={() => navigate(`shoppingdetail/${productsId}`)}
+          onClick={() => navigate(`/productdetail/${productsId}`)}
         >
           +
         </S.MarkerButton>
@@ -75,39 +76,41 @@ const HomepartyDetail = () => {
   const todayDate = `${time.year}-${time.month}-${time.date}`;
 
   const enterComment = e => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && token) {
       sendComments();
     }
   };
 
   const sendComments = event => {
-    if (currentComment === '') {
-      return;
-    }
-    const newComment = {
-      postId: params.id,
-      nickname: myNickname,
-      profileImage: myProfileImage,
-      content: currentComment,
-      reply_comments: [],
-      date: todayDate,
-    };
-
-    setCommentList([newComment, ...commentList]);
-    setcurrentComment('');
-    setAddComment(addComment => addComment + 1);
-
-    fetch(`${API.comment}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-        authorization: token,
-      },
-      body: JSON.stringify({
-        contents: currentComment,
+    if (token) {
+      if (currentComment === '') {
+        return;
+      }
+      const newComment = {
         postId: params.id,
-      }),
-    }).then(response => response.json());
+        nickname: myNickname,
+        profileImage: myProfileImage,
+        content: currentComment,
+        reply_comments: [],
+        date: todayDate,
+      };
+
+      setCommentList([newComment, ...commentList]);
+      setcurrentComment('');
+      setAddComment(addComment => addComment + 1);
+
+      fetch(`${API.comment}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          authorization: token,
+        },
+        body: JSON.stringify({
+          contents: currentComment,
+          postId: params.id,
+        }),
+      }).then(response => response.json());
+    }
   };
 
   useEffect(() => {
@@ -181,7 +184,7 @@ const HomepartyDetail = () => {
             key={productsId}
             id={productsId}
             src={productUrl}
-            onClick={() => navigate(`shoppingdetail/${productsId}`)}
+            onClick={() => navigate(`/productdetail/${productsId}`)}
             onMouseMove={() => {
               setShow(true);
               setgetproductId(productsId);
@@ -210,14 +213,18 @@ const HomepartyDetail = () => {
       <S.Comment color>{addComment}</S.Comment>
       <S.CommentUserBox>
         <S.CommentUserPic src="/images/frog.png" alt="사용자" />
-        <S.Input
-          placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
-          value={currentComment}
-          onChange={e => {
-            setcurrentComment(e.target.value);
-          }}
-          onKeyUp={enterComment}
-        />
+        {token ? (
+          <S.Input
+            placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다 :)"
+            value={currentComment}
+            onChange={e => {
+              setcurrentComment(e.target.value);
+            }}
+            onKeyUp={enterComment}
+          />
+        ) : (
+          <S.Input placeholder="로그인을 해주세요 :)" />
+        )}
         <S.CommentBtn onClick={sendComments}>입력</S.CommentBtn>
       </S.CommentUserBox>
       <S.CommentZone>
