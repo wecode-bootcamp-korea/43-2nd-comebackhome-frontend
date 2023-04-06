@@ -24,7 +24,7 @@ const ProductDetail = () => {
       setCount(value);
     }
     if (name === 'plus') {
-      if (count === product[0].stock) {
+      if (count >= product[0].stock) {
         return setCount(product[0].stock);
       }
       setCount(count => Number(count) + 1);

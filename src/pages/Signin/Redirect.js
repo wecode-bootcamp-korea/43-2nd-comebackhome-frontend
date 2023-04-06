@@ -4,7 +4,7 @@ import { REST_API_KEY } from './Oauth';
 import { API, REDIRECT_URI } from '../../config';
 import Spinner from '../../components/Spinner/Spinner';
 const Redirect = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const code = searchParams.get('code');
 

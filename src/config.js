@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://10.58.52.128:3000';
+export const BASE_URL = 'http://10.58.52.199:3000';
 export const KAKAO_BASE_URL = 'https://kauth.kakao.com';
 export const REDIRECT_URI = 'http://localhost:3000/auth/kakao/callback';
 

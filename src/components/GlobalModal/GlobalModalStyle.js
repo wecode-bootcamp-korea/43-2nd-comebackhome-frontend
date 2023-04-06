@@ -8,6 +8,7 @@ export const ButtonWrap = styled.div`
 export const CustomStyles = {
   content: {
     display: 'flex',
+    inset: '110px',
     border: '1px solid  #afd485',
     justifyContent: 'center',
     flexDirection: 'column',
